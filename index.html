@@ -4,24 +4,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Elaine's Mini Frontend Challenges</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background: #f9f9f9;
+      }
+      h1 {
+        color: #333;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 1rem 0;
+      }
+      a {
+        text-decoration: none;
+        color: #007acc;
+        background: #e6f0ff;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+      a:hover {
+        background: #cce0ff;
+      }
+    </style>
   </head>
   <body>
-    <div class="main">
-      <div class="image">
-        <img src="/images/image-qr-code.png" alt="" />
-      </div>
-      <div class="text">
-        <h2 class="sub-title">
-          Improve your front-end skills by building projects
-        </h2>
-        <p>
-          Scan the QR code to visit Frontend Mentor and ake your coding skills
-          to the next level
-        </p>
-      </div>
-    </div>
+    <h1>Elaine's Frontend Mini Challenges</h1>
+    <ul>
+      <li><a href="/qr-code/index.html"> QR Code Component-Flex</a></li>
+      <li>
+        <a href="./02-name-list/index.html">📋 Name List with &lt;li&gt;</a>
+      </li>
+      <li><a href="./03-login-card/index.html">🔐 Login Card</a></li>
+    </ul>
   </body>
 </html>
