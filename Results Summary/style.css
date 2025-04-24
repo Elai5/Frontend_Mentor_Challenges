@@ -1,0 +1,155 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(221, 100%, 96%);
+}
+.main {
+  display: flex;
+  align-items: center;
+  width: 700px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px;
+}
+.card {
+  height: 400px;
+  width: 300px;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+p.heading {
+  color: hsl(221, 100%, 96%);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 20px 0;
+}
+.card .circle {
+  border-radius: 55%;
+  /* background-color: red; */
+  background-color: hsla(256, 72%, 46%, 1);
+  height: 150px;
+  width: 150px;
+  border: 1px solid hsla(256, 72%, 46%, 1);
+  text-align: center;
+  padding: 30px;
+}
+.card .circle .num {
+  font-size: 40px;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+.card .circle .second-num {
+  color: hsl(221, 100%, 96%);
+}
+.card h2 {
+  color: hsl(0, 0%, 100%);
+  font-size: 23px;
+  margin: 15px 0;
+}
+.card p {
+  color: hsl(241, 100%, 89%);
+  width: 85%;
+  text-align: center;
+}
+.summary {
+  padding: 20px;
+  width: 400px;
+}
+.summary .main-heading {
+  color: hsl(224, 30%, 27%);
+  font-size: 20px;
+  font-weight: bold;
+}
+.summary .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  /* background-color: blue; */
+}
+.summary .row .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 15px;
+  padding: 14px 0;
+  margin-bottom: 5px;
+  /* color: hsl(224, 30%, 27%); */
+}
+.summary .row .box .score {
+  color: #a0a0a0;
+}
+.box-01 {
+  background-color: #ffe6e6;
+  color: hsl(0, 100%, 67%);
+}
+.box-02 {
+  color: hsl(39, 100%, 56%);
+  background-color: #fffaf4;
+}
+.box-03 {
+  color: hsl(166, 100%, 37%);
+  background-color: #f2fdf9;
+}
+.box-04 {
+  color: hsl(234, 85%, 45%);
+  background-color: #f4f4fe;
+}
+.box span {
+  color: hsl(224, 30%, 27%);
+}
+.summary button {
+  background-color: hsl(224, 30%, 27%);
+  padding: 15px 32px;
+  color: white;
+  border-radius: 25px;
+  outline: 0;
+  border: 0;
+  width: 90%;
+  margin: 0 20px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+@media (max-width: 425px) {
+  .main {
+    display: flex;
+    /* background-color: red; */
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100vh; */
+    width: 100%;
+    margin-top: 40px;
+  }
+  .main .card {
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px 15px 25px 15px;
+    border-radius: 0 0 52px 52px;
+  }
+  .main .card p {
+    /* width: 250px; */
+    text-align: center;
+  }
+  .summary .row .box {
+    margin-bottom: 20px;
+  }
+}
