@@ -1,0 +1,74 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+html {
+  display: flex;
+  height: 100vh;
+  background-color: hsl(20, 50%, 98%);
+}
+.main {
+  padding: 40px;
+  width: 100vw;
+  height: 100vh;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.content .left {
+  display: flex;
+}
+.content .row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content .row .card {
+  width: 150px;
+  margin: 0 20px;
+}
+.content .row .card .pic {
+  aspect-ratio: 1/1;
+}
+.content .row .card img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 5px;
+}
+.card small {
+  color: hsl(7, 20%, 60%);
+  font-size: 10px;
+}
+.card p {
+  font-size: 12px;
+  font-weight: 500;
+}
+.card span {
+  color: hsl(14, 86%, 42%);
+  font-size: 11px;
+}
+
+button {
+  display: flex;
+  padding: 6px 15px;
+  gap: 1px;
+  border-radius: 25px;
+  outline: 0;
+  border: 1px solid hsl(7, 20%, 60%);
+  background-color: white;
+  position: relative;
+  top: -80px;
+  margin-left: 25px;
+}
+ .btn button p {
+  font-size:9px;
+  /* color: red; */
+}
