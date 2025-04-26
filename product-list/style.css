@@ -21,8 +21,6 @@ html {
 }
 h2 {
   font-size: 25px;
-  /* text-indent: 80px; */
-  /* text-align: justify; */
 }
 .content {
   display: flex;
@@ -33,15 +31,10 @@ h2 {
 .content .left {
   display: flex;
 }
-/* .content{
-    display: flex;
-    flex-direction: column;
-} */
 .content .row {
   display: flex;
   flex-direction: column;
   gap: 0px;
-  /* background-color: gold; */
 }
 .content .row .card {
   width: 230px;
@@ -116,4 +109,31 @@ button {
   font-size: 15px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+@media (max-width: 425px) {
+  .main {
+    overflow: scroll;
+    margin: 20px;
+    padding: 20px;
+  }
+  .main .content {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+  }
+  .main .content .left {
+    display: flex;
+    flex-direction: column;
+  }
+  .main .content .card {
+    width: auto;
+  }
+  .btn button {
+    margin-left: 55px;
+  }
+  .box {
+    margin-top: 30px;
+    width: auto;
+  }
 }
