@@ -42,6 +42,7 @@ h2 {
 }
 .content .row .card .pic {
   aspect-ratio: 1/1;
+  position: relative;
 }
 .content .row .card img {
   object-fit: contain;
@@ -49,7 +50,7 @@ h2 {
   border-radius: 5px;
 }
 .card .text {
-  margin-top: 15px;
+  margin: 15px 0 30px 0;
 }
 .card small {
   color: hsl(7, 20%, 60%);
@@ -65,7 +66,70 @@ h2 {
   font-weight: 500;
 }
 
-button {
+.cart-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 70%;
+  position: relative;
+  border: 1px solid hsl(7, 20%, 60%);
+  background-color: white;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: green; */
+}
+.cart-action-btn:hover {
+  background-color: hsl(14, 86%, 42%);
+  cursor: pointer;
+}
+.cart-action-btn .default-state,
+.cart-action-btn .quantity-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.cart-action-btn.active-cart .default-state {
+  display: none;
+}
+.cart-action-btn .quantity-state {
+  display: none;
+}
+.cart-action-btn.active-cart .quantity-state {
+  display: flex;
+}
+.cart-action-btn .plus-btn,
+.cart-action-btn .minus-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  /* background-color: white; */
+  padding: 5px;
+  object-fit: contain;
+  transition: background-color 0.2s ease;
+  /* outline: 0; */
+  /* height: 20px; */
+}
+.cart-action-btn.active-cart {
+  background-color: hsl(14, 86%, 42%) !important;
+}
+.cart-action-btn .quantity-count {
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* button {
   display: flex;
   justify-content: center;
   padding: 6px 22px;
@@ -77,7 +141,7 @@ button {
   position: relative;
   top: -105px;
   margin-left: 45px;
-}
+} */
 .btn button p {
   font-size: 12px;
 }
@@ -96,7 +160,6 @@ button {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 20px;
-  /* text-align: right; */
 }
 .sub-content {
   display: flex;
