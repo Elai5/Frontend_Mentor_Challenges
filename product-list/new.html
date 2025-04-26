@@ -3,17 +3,25 @@
 <div class="cart-item-details">
   <div class="title">
     <p class="item-name">${productName}</p>
-    <div class="item-meta">
-      <span class="quantity-count">1x</span>
+  </div>
+  <div class="item-meta">
+    <div class="products">
+      <span class="quantity-count">${quantity}x</span>
       <span class="item-price">@$${productPrice.toFixed(2)}</span>
-      <span class="total-price">${productPrice.toFixed(2)}</span>
-      <div class="my-btn">
-        <button class="remove-item-btn">
-          <img src="./images/icon-remove-item.svg" alt="" />
-        </button>
-      </div>
+      <span class="total-price">${(quantity * productPrice).toFixed( 2 )}</span>
+    </div>
+    <div class="my-btn">
+      <button class="remove-item-btn">
+        <img src="./images/icon-remove-item.svg" alt="Remove" />
+      </button>
     </div>
   </div>
-  <button id="confirm">Confirm Order</button>
 </div>
-<button id="confirm">Confirm Order</button>
+<style>
+  .item-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
