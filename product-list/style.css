@@ -248,12 +248,13 @@ h2 {
 }
 .confirmation-box {
   background-color: hsl(20, 50%, 98%);
-  background-color: lightblue;
   padding: 20px;
   width: 400px;
   margin: 0 auto;
   border-radius: 5px;
-  /* display: none; */
+  height: auto;
+  max-height: 600px;
+  display: none;
 }
 .confirmation-header {
   align-items: center;
@@ -270,38 +271,85 @@ h2 {
 }
 .confirmed-items {
   margin-top: 20px;
+  /* background-color: red; */
+  width: 100%;
+  border-radius: 25px;
+  /* padding: 20px 0; */
 }
-.confirmed-items .confirmed-item {
+.my-items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: auto;
+  max-height: 500px;
+}
+.my-items .confirmed-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
-}
-.confirmed-items .confirmed-item {
-  width: 50px;
-  height: 50px;
-}
-.confirmed-items .confirmed-item .item-details {
-  flex: 1;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 10px auto;
+  border-radius: 5px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
-.confirmed-items .confirmed-item .item-price,
-.confirmed-items .confirmed-item .item-quantity {
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.product-image img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.confirmed-item .product-name {
+  font-size: 12px;
+  color: hsl(14, 65%, 9%);
+}
+
+.product-quantity-price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.confirmed-item .product-quantity {
   font-size: 14px;
-  color: hsl(14, 65%, 9%);
-}
-.final-total {
-  margin-top: 20px;
-  font-size: 18px;
+  color: hsl(14, 86%, 42%);
   font-weight: 600;
-  display: flex;
-  justify-content: space-between;
+  margin-right: 10px;
 }
-.final-total span {
-  font-size: 18px;
-  font-weight: bold;
+
+.confirmed-item .product-price {
+  font-size: 10px;
+  color: hsl(7, 20%, 60%);
+}
+
+.price {
+  text-align: right;
+}
+
+.confirmed-item .total-price {
+  font-size: 12px;
   color: hsl(14, 65%, 9%);
 }
+
 @media (max-width: 425px) {
   .main {
     overflow: scroll;

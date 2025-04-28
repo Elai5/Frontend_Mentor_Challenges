@@ -46,6 +46,7 @@ function updateCart(btn) {
   const productName = btn.getAttribute("data-name");
   const productPrice = parseFloat(btn.getAttribute("data-price"));
   const quantity = parseInt(btn.querySelector(".quantity-count").textContent);
+  const productImage = btn.querySelector("img").src; // Get image dynamically
 
   const purchasedItemsContainer = document.querySelector(".purchased-items");
   let existingItem = purchasedItemsContainer.querySelector(
@@ -144,11 +145,25 @@ document.getElementById("confirm").addEventListener("click", function () {
     const itemImage = item.querySelector("img").src; // Assuming the image is inside the cart item.
 
     const itemHTML = `
-        <div class="confirmed-item">
-          <img src="${itemImage}" alt="${itemName}" class="confirmed-item-image"/>
-          <p>${itemName} - ${itemQuantity}</p>
-          <p>Price: ${itemTotalPrice}</p>
-        </div>`;
+  <div class="confirmed-item">
+  <div class="my-items">
+    <div class="product-image">
+      <img src="${itemImage}" alt="${itemName}" class="confirmed-item-image" />
+    </div>
+    <div class="product-details">
+      <p class="product-name">${itemName}</p>
+      <div class="product-quantity-price">
+        <p class="product-quantity">${itemQuantity}</p>
+        <p class="product-price">@$${parseFloat(itemTotalPrice).toFixed(2)}</p>
+      </div>
+    </div>
+    <div class="price">
+      <p class="total-price">$${parseFloat(itemTotalPrice).toFixed(2)}</p>
+    </div>
+    </div>
+  </div>
+`;
+
     confirmedItemsContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
 
