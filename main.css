@@ -1,0 +1,131 @@
+/**
+ * main.css
+ *
+ * @format
+ */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(220, 15%, 95%);
+  padding: 2rem;
+}
+
+/* Title */
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5d3fd3;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Row */
+.row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.cards {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.cards:hover {
+  transform: translateY(-10px);
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 5px;
+}
+
+/* Card Text */
+.cards .text {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cards .text p {
+  font-size: 1rem;
+  color: hsl(220, 15%, 55%);
+}
+
+/* Card Link */
+.cards p a {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: hsl(218, 44%, 22%);
+  font-size: 1.1rem;
+}
+
+.cards p a:hover {
+  color: hsl(228, 45%, 44%);
+}
+/* Languages Container */
+.languages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1rem;
+}
+
+/* Individual Language Tag */
+.lang {
+  /* padding: 0.4rem 0.8rem; */
+  /* border-radius: 999px; */
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Specific Colors */
+.lang.html {
+  color: lightskyblue;
+}
+
+.lang.css {
+  color: purple;
+}
+.lang.js {
+  /* background-color: #f0db4f; */
+  color: orangered;
+}

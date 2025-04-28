@@ -1,99 +1,5 @@
 /** @format */
 
-// /** @format */
-// document.addEventListener("click", function (e) {
-//   const btn = e.target.closest(".cart-action-btn");
-//   if (!btn) return;
-
-//   const defaultState = btn.querySelector(".default-state");
-//   const quantityState = btn.querySelector(".quantity-state");
-//   const quantityCount = btn.querySelector(".quantity-count");
-
-//   if (defaultState && defaultState.contains(e.target)) {
-//     defaultState.style.display = "none";
-//     quantityState.style.display = "flex";
-//     quantityCount.textContent = "1";
-//     btn.classList.add("active-cart");
-//   }
-
-//   if (e.target.classList.contains("plus-btn")) {
-//     let qty = parseInt(quantityCount.textContent);
-//     quantityCount.textContent = qty + 1;
-
-//     const card = btn.closest(".card");
-//     card.classList.add("active-card");
-//   }
-
-//   if (e.target.classList.contains("minus-btn")) {
-//     let qty = parseInt(quantityCount.textContent);
-//     if (qty > 1) {
-//       quantityCount.textContent = qty - 1;
-//     } else {
-//       // If qty is 1 and user clicks minus, reset to default state
-//       quantityCount.textContent = "0";
-//       quantityState.style.display = "none";
-//       defaultState.style.display = "flex";
-//       btn.classList.remove("active-cart");
-//     }
-//   }
-// });
-
-// document.addEventListener("click", function (e) {
-//   const btn = e.target.closest(".cart-action-btn");
-//   if (!btn) return;
-
-//   const productId = btn.getAttribute("data-id");
-//   const productName = btn.getAttribute("data-name");
-//   const productPrice = parseFloat(btn.getAttribute("data-price"));
-
-//   const purchasedItemsContainer = document.querySelector(".purchased-items");
-
-//   let existingItem = purchasedItemsContainer.querySelector(
-//     `.cart-item[data-id="${productId}"]`
-//   );
-
-//   if (existingItem) {
-//     const quantityCount = existingItem.querySelector(".quantity-count");
-//     const newQuantity = parseInt(quantityCount.textContent) + 1;
-//     quantityCount.textContent = newQuantity;
-
-//     const totalPrice = existingItem.querySelector(".total-price");
-//     totalPrice.textContent = (newQuantity * productPrice).toFixed(2);
-//   } else {
-//     const cartItem = document.createElement("div");
-//     cartItem.classList.add("cart-item");
-//     cartItem.setAttribute("data-id", productId);
-
-//     cartItem.innerHTML = `
-//     <div class="cart-item-details">
-//         <div class="title">
-//             <p class="item-name">${productName}</p>
-//         </div>
-//         <div class="item-meta">
-//             <span class="quantity-count">1x</span>
-//             <span class="item-price">@$${productPrice.toFixed(2)}</span>
-//             <span class="total-price">${productPrice.toFixed(2)}</span>
-//                 <div class="my-btn">
-//                     <button class="remove-item-btn">
-//                         <img src="./images/icon-remove-item.svg" alt="" />
-//                     </button>
-//                 </div>
-//         </div>
-//     </div>
-//      <button id="confirm">Confirm Order</button>
-
-//       `;
-
-//     purchasedItemsContainer.appendChild(cartItem);
-//   }
-
-//   const cartCount = document.querySelector(".heading");
-//   const currentCount = parseInt(cartCount.textContent.match(/\d+/)[0]);
-//   cartCount.textContent = `Your Cart(${currentCount + 1})`;
-
-//   document.querySelector(".sub-content").style.display = "none";
-// });
-
 document.addEventListener("click", function (e) {
   const btn = e.target.closest(".cart-action-btn");
   if (!btn) return;
@@ -157,28 +63,30 @@ function updateCart(btn) {
     cartItem.setAttribute("data-id", productId);
     cartItem.innerHTML = `
         <div class="cart-item-details">
-  <div class="title">
-    <p class="item-name">${productName}</p>
-  </div>
-  <div class="item-meta">
-    <div class="products">
-      <span class="quantity-count">${quantity}x</span>
-      <span class="item-price">@$${productPrice.toFixed(2)}</span>
-      <span class="total-price">${(quantity * productPrice).toFixed(2)}</span>
-    </div>
-    <div class="my-btn">
-      <button class="remove-item-btn">
-        <img src="./images/icon-remove-item.svg" alt="Remove" />
-      </button>
-    </div>
-  </div>
-</div>
+          <div class="title">
+            <p class="item-name">${productName}</p>
+          </div>
+          <div class="item-meta">
+            <div class="products">
+              <span class="quantity-count">${quantity}x</span>
+              <span class="item-price">@$${productPrice.toFixed(2)}</span>
+              <span class="total-price">${(quantity * productPrice).toFixed(
+                2
+              )}</span>
+            </div>
+            <div class="my-btn">
+              <button class="remove-item-btn">
+                <img src="./images/icon-remove-item.svg" alt="Remove" />
+              </button>
+            </div>
+          </div>
+        </div>
       `;
     purchasedItemsContainer.appendChild(cartItem);
   }
 
   updateCartHeading();
-  document.getElementById("confirm").style.display = "block";
+  document.getElementById("confirm").style.display = "block"; // Show the confirm order button
 }
 
 // Function to remove item from cart
@@ -195,6 +103,7 @@ function removeFromCart(btn) {
 
   updateCartHeading();
 
+  // Hide the confirm order button if cart is empty
   if (purchasedItemsContainer.querySelectorAll(".cart-item").length === 0) {
     document.getElementById("confirm").style.display = "none";
   }
@@ -215,3 +124,59 @@ function updateCartHeading() {
 
   cartCount.textContent = `Your Cart(${totalQuantity})`;
 }
+
+// Render confirmation-order box when "Confirm Order" button is clicked
+document.getElementById("confirm").addEventListener("click", function () {
+  // Show confirmation box
+  document.querySelector(".confirmation-box").style.display = "block";
+
+  const purchasedItemsContainer = document.querySelector(".purchased-items");
+  const confirmedItemsContainer = document.querySelector(".confirmed-items");
+
+  confirmedItemsContainer.innerHTML = ""; // Clear previous confirmed items
+
+  const cartItems = purchasedItemsContainer.querySelectorAll(".cart-item");
+
+  cartItems.forEach((item) => {
+    const itemName = item.querySelector(".item-name").textContent;
+    const itemQuantity = item.querySelector(".quantity-count").textContent;
+    const itemTotalPrice = item.querySelector(".total-price").textContent;
+    const itemImage = item.querySelector("img").src; // Assuming the image is inside the cart item.
+
+    const itemHTML = `
+        <div class="confirmed-item">
+          <img src="${itemImage}" alt="${itemName}" class="confirmed-item-image"/>
+          <p>${itemName} - ${itemQuantity}</p>
+          <p>Price: ${itemTotalPrice}</p>
+        </div>`;
+    confirmedItemsContainer.insertAdjacentHTML("beforeend", itemHTML);
+  });
+
+  let finalTotal = 0;
+  cartItems.forEach((item) => {
+    const itemPrice = parseFloat(
+      item.querySelector(".total-price").textContent
+    );
+    finalTotal += itemPrice;
+  });
+
+  // Display final order total
+  document.getElementById(
+    "final-order-total"
+  ).textContent = `$${finalTotal.toFixed(2)}`;
+});
+
+// Confirm Checkout and complete order
+document
+  .getElementById("confirm-checkout")
+  .addEventListener("click", function () {
+    alert("Order Confirmed!"); // Example confirmation action
+
+    // Reset the cart and hide confirmation box after confirming
+    document.querySelector(".confirmation-box").style.display = "none";
+    document.querySelector(".box").style.display = "block"; // Show the cart box again
+    document.querySelector(".purchased-items").innerHTML = ""; // Clear cart
+    document.getElementById("order-total-value").textContent = "$0.00"; // Reset total
+    document.getElementById("confirm").style.display = "none"; // Hide the confirm order button
+    updateCartHeading(); // Reset cart heading
+  });

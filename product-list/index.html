@@ -434,6 +434,7 @@
               </div>
             </div>
           </div>
+
           <div class="box">
             <h3 class="heading">Your Cart(0)</h3>
             <div class="sub-content">
@@ -442,7 +443,29 @@
             </div>
             <div class="purchased-items"></div>
             <button id="confirm" style="display: none">Confrim order</button>
-            <div id="product-list"></div>
+            <div class="order-total" style="display: none">
+              <p>Order Total <span id="order-total-value">$ 0.00</span></p>
+            </div>
+            <!-- <button id="confirm" style="display: none">Confirm Order</button> -->
+          </div>
+          <div id="product-list"></div>
+
+          <div class="confirmation-box" style="display: none">
+            <img
+              src="./images/icon-order-confirmed.svg"
+              alt=""
+              style="width: 25px"
+            />
+            <div class="confirmation-header">
+              <h3>Order Confirmed</h3>
+              <p>We hope you enjoy your food!</p>
+              <div class="confirmed-items"></div>
+              <div class="final-total">
+                <strong>Order Total</strong
+                ><span id="final-order-total">$0.00</span>
+              </div>
+              <button id="confirm-checkout">Confirm</button>
+            </div>
           </div>
         </div>
         <!-- <div class="box">
