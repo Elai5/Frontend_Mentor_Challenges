@@ -8,7 +8,6 @@ document.addEventListener("click", function (e) {
   const quantityState = btn.querySelector(".quantity-state");
   const quantityCount = btn.querySelector(".quantity-count");
 
-  // Show quantity selector when "Add to Cart" is clicked
   if (defaultState && defaultState.contains(e.target)) {
     defaultState.style.display = "none";
     quantityState.style.display = "flex";
@@ -17,14 +16,12 @@ document.addEventListener("click", function (e) {
     updateCart(btn);
   }
 
-  // Plus button increases count and updates cart
   if (e.target.classList.contains("plus-btn")) {
     let qty = parseInt(quantityCount.textContent);
     quantityCount.textContent = qty + 1;
     updateCart(btn);
   }
 
-  // Minus button decreases count and updates cart or removes item
   if (e.target.classList.contains("minus-btn")) {
     let qty = parseInt(quantityCount.textContent);
     if (qty > 1) {
@@ -40,13 +37,12 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Function to update or add an item in the cart
 function updateCart(btn) {
   const productId = btn.getAttribute("data-id");
   const productName = btn.getAttribute("data-name");
   const productPrice = parseFloat(btn.getAttribute("data-price"));
   const quantity = parseInt(btn.querySelector(".quantity-count").textContent);
-  const productImage = btn.querySelector("img").src; // Get image dynamically
+  const productImage = btn.querySelector("img").src;
 
   const purchasedItemsContainer = document.querySelector(".purchased-items");
   let existingItem = purchasedItemsContainer.querySelector(
@@ -87,10 +83,9 @@ function updateCart(btn) {
   }
 
   updateCartHeading();
-  document.getElementById("confirm").style.display = "block"; // Show the confirm order button
+  document.getElementById("confirm").style.display = "block";
 }
 
-// Function to remove item from cart
 function removeFromCart(btn) {
   const productId = btn.getAttribute("data-id");
   const purchasedItemsContainer = document.querySelector(".purchased-items");
@@ -104,13 +99,12 @@ function removeFromCart(btn) {
 
   updateCartHeading();
 
-  // Hide the confirm order button if cart is empty
   if (purchasedItemsContainer.querySelectorAll(".cart-item").length === 0) {
     document.getElementById("confirm").style.display = "none";
   }
 }
 
-// Update the cart heading count (total quantity of all items)
+// Update the cart heading count
 function updateCartHeading() {
   const cartCount = document.querySelector(".heading");
   const items = document.querySelectorAll(".purchased-items .cart-item");
@@ -126,16 +120,14 @@ function updateCartHeading() {
   cartCount.textContent = `Your Cart(${totalQuantity})`;
 }
 
-// Render confirmation-order box when "Confirm Order" button is clicked
 document.getElementById("confirm").addEventListener("click", function () {
-  // Show the confirmation overlay and box
   document.querySelector(".confirmation-overlay").style.display = "block";
   document.querySelector(".confirmation-box").style.display = "block";
 
   const purchasedItemsContainer = document.querySelector(".purchased-items");
   const confirmedItemsContainer = document.querySelector(".confirmed-items");
 
-  confirmedItemsContainer.innerHTML = ""; // Clear previous confirmed items
+  confirmedItemsContainer.innerHTML = "";
 
   const cartItems = purchasedItemsContainer.querySelectorAll(".cart-item");
 
@@ -143,7 +135,7 @@ document.getElementById("confirm").addEventListener("click", function () {
     const itemName = item.querySelector(".item-name").textContent;
     const itemQuantity = item.querySelector(".quantity-count").textContent;
     const itemTotalPrice = item.querySelector(".total-price").textContent;
-    const itemImage = item.querySelector("img").src; // Assuming the image is inside the cart item.
+    const itemImage = item.querySelector("img").src;
 
     const itemHTML = `
   <div class="confirmed-item">
@@ -176,25 +168,33 @@ document.getElementById("confirm").addEventListener("click", function () {
     finalTotal += itemPrice;
   });
 
-  // Display final order total
   document.getElementById(
     "final-order-total"
   ).textContent = `$${finalTotal.toFixed(2)}`;
 });
 
-// Confirm Checkout and complete order
 document
   .getElementById("confirm-checkout")
   .addEventListener("click", function () {
-   
-    // Reset the cart and hide confirmation box after confirming
     document.querySelector(".confirmation-overlay").style.display = "none";
-    document.querySelector(".confirmation-box").style.display = "none"; // Hide confirmation box
-    document.querySelector(".box").style.display = "block"; // Show the cart box again
-    document.querySelector(".purchased-items").innerHTML = ""; // Clear cart
-    document.getElementById("order-total-value").textContent = "$0.00"; // Reset total
-    document.getElementById("confirm").style.display = "none"; // Hide the confirm order button
-    updateCartHeading(); // Reset cart heading
+    document.querySelector(".confirmation-box").style.display = "none";
+    document.querySelector(".box").style.display = "block";
+    document.querySelector(".purchased-items").innerHTML = "";
+    document.getElementById("order-total-value").textContent = "$0.00";
+    document.getElementById("confirm").style.display = "none";
 
-    
+    updateCartHeading();
+
+    const cartActionBtns = document.querySelectorAll(".cart-action-btn");
+    cartActionBtns.forEach((btn) => {
+      const defaultState = btn.querySelector(".default-state");
+      const quantityState = btn.querySelector(".quantity-state");
+
+      if (defaultState) defaultState.style.display = "flex";
+      if (quantityState) quantityState.style.display = "none";
+      btn.classList.remove("active-cart");
+
+      const quantityCount = btn.querySelector(".quantity-count");
+      if (quantityCount) quantityCount.textContent = "1";
+    });
   });
