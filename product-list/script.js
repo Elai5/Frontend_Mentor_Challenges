@@ -128,7 +128,8 @@ function updateCartHeading() {
 
 // Render confirmation-order box when "Confirm Order" button is clicked
 document.getElementById("confirm").addEventListener("click", function () {
-  // Show confirmation box
+  // Show the confirmation overlay and box
+  document.querySelector(".confirmation-overlay").style.display = "block";
   document.querySelector(".confirmation-box").style.display = "block";
 
   const purchasedItemsContainer = document.querySelector(".purchased-items");
@@ -185,13 +186,15 @@ document.getElementById("confirm").addEventListener("click", function () {
 document
   .getElementById("confirm-checkout")
   .addEventListener("click", function () {
-    alert("Order Confirmed!"); // Example confirmation action
-
+   
     // Reset the cart and hide confirmation box after confirming
-    document.querySelector(".confirmation-box").style.display = "none";
+    document.querySelector(".confirmation-overlay").style.display = "none";
+    document.querySelector(".confirmation-box").style.display = "none"; // Hide confirmation box
     document.querySelector(".box").style.display = "block"; // Show the cart box again
     document.querySelector(".purchased-items").innerHTML = ""; // Clear cart
     document.getElementById("order-total-value").textContent = "$0.00"; // Reset total
     document.getElementById("confirm").style.display = "none"; // Hide the confirm order button
     updateCartHeading(); // Reset cart heading
+
+    
   });

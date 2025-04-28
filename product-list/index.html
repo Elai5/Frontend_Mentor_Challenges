@@ -436,35 +436,43 @@
           </div>
 
           <div class="box">
-            <h3 class="heading">Your Cart(0)</h3>
+            <h3 class="heading">Your Cart (0)</h3>
             <div class="sub-content">
               <img src="./images/illustration-empty-cart.svg" alt="" />
               <p>Your added items will appear here</p>
             </div>
             <div class="purchased-items"></div>
-            <button id="confirm" style="display: none">Confrim order</button>
+            <!-- List of items in the cart -->
+            <button id="confirm" style="display: none">Confirm Order</button>
+            <!-- Hidden until there are items -->
             <div class="order-total" style="display: none">
               <p>Order Total <span id="order-total-value">$ 0.00</span></p>
             </div>
-            <!-- <button id="confirm" style="display: none">Confirm Order</button> -->
+            <!-- Order total displayed only after adding items -->
           </div>
-          <div id="product-list"></div>
 
-          <div class="confirmation-box" style="display: none">
-            <img
-              src="./images/icon-order-confirmed.svg"
-              alt=""
-              style="width: 25px"
-            />
-            <div class="confirmation-header">
-              <h3>Order Confirmed</h3>
-              <p>We hope you enjoy your food!</p>
-              <div class="confirmed-items"></div>
-              <div class="final-total">
-                <strong>Order Total</strong
-                ><span id="final-order-total">$0.00</span>
+          <div id="product-list"></div>
+          <!-- Product list for adding items -->
+
+          <div class="confirmation-overlay" style="display: none">
+            <!-- This overlay covers the entire page -->
+            <div class="confirmation-box">
+              <img
+                src="./images/icon-order-confirmed.svg"
+                alt=""
+                style="width: 28px"
+              />
+              <div class="confirmation-header">
+                <h3>Order Confirmed</h3>
+                <p>We hope you enjoy your food!</p>
+                <div class="confirmed-items"></div>
+                <!-- Confirmed items list -->
+                <div class="final-total">
+                  <strong>Order Total</strong
+                  ><span id="final-order-total">$0.00</span>
+                </div>
+                <button id="confirm-checkout">Start New Order</button>
               </div>
-              <button id="confirm-checkout">Confirm</button>
             </div>
           </div>
         </div>
