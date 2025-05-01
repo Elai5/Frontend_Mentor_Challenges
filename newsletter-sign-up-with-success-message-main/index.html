@@ -29,9 +29,11 @@
       }
     </style>
   </head>
-  <body class="bg-[hsl(234,29%,20%)]">
+  <body
+    class="bg-[hsl(234,29%,20%)] min-h-screen flex items-center justify-center"
+  >
     <div
-      class="flex flex-col-2 justify-center items-center py-1 gap-5 w-3/4 h-full mt-30 bg-white relative left-50 rounded-xl m-0 hidden"
+      class="grid grid-cols-1 md:grid grid-cols-2 gap-40 bg-white w-700 mx-4 rounded-xl p-6 relative left-50"
     >
       <div class="px-4 mt-10 ml-2 w-100">
         <h1 class="text-4xl font-bold mb-4">
@@ -72,10 +74,9 @@
           Subscribe to monthly newsletter
         </button>
       </div>
-      <div class="cover w-1/4">
-        <div class="image"></div>
+      <div class="cover">
         <img
-          class="h-full"
+          class="h-full py-2"
           src="./assets/images/illustration-sign-up-desktop.svg"
           alt=""
         />
@@ -85,7 +86,7 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <div class="grid justify-items-center">
+    <div class="grid justify-items-center hidden">
       <div
         class="bg-white w-105 h-auto flex flex-col justify-center rounded-xl px-10 py-5 relative top-50"
       >
@@ -111,7 +112,7 @@
     </div>
 
     <!-- Success message end -->
-    <div class="grid justify-items-center relative top-100 w-full  ">
+    <div class=" relative top-100 w-full left-0">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
