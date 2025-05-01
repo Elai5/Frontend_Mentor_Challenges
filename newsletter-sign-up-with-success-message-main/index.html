@@ -31,11 +31,11 @@
   </head>
   <body class="bg-[hsl(234,29%,20%)]">
     <div
-      class="flex flex-col-2 justify-center py-1 gap-5 w-3/4 h-full mt-30 bg-white relative left-50 rounded-xl m-0"
+      class="flex flex-col-2 justify-center items-center py-1 gap-5 w-3/4 h-full mt-30 bg-white relative left-50 rounded-xl m-0 hidden"
     >
       <div class="px-4 mt-10 ml-2 w-100">
         <h1 class="text-4xl font-bold mb-4">
-          <span class="bg-violet-100">Stay</span> updated!
+          <span class="bg-indigo-100">Stay</span> updated!
         </h1>
         <p class="text-base mb-4 w-100">
           Join 60,000+ product managers receiving monthly updates on:
@@ -72,30 +72,46 @@
           Subscribe to monthly newsletter
         </button>
       </div>
-      <div class=" cover w-1/4 ">
+      <div class="cover w-1/4">
         <div class="image"></div>
-        <img class="h-full" src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+        <img
+          class="h-full"
+          src="./assets/images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
       </div>
     </div>
 
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <div class="bg-white w-100">
-      <div class="image">
-        <img src="" alt="" />
-      </div>
-      <div class="sub-text">
-        <h1>Thanks for subscribing!</h1>
-        <p>
-          A confirmation email has been sent to ash@loremcompany.com. Please
-          open it and click the button inside to confirm your subscription.
-        </p>
-        <button>Dismiss message</button>
+    <div class="grid justify-items-center">
+      <div
+        class="bg-white w-105 h-auto flex flex-col justify-center rounded-xl px-10 py-5 relative top-50"
+      >
+        <div class="image">
+          <img class="mb-6 w-10" src="/assets/images/icon-list.svg" alt="" />
+        </div>
+        <div class="sub-text">
+          <h1 class="text-3xl w-1/2 font-bold mb-3">
+            <span class="bg-indigo-100">Thanks</span> for subscribing!
+          </h1>
+          <p class="text-sm mb-6">
+            A confirmation email has been sent to
+            <span class="font-bold">ash@loremcompany.com.</span> Please open it
+            and click the button inside to confirm your subscription.
+          </p>
+          <button
+            class="bg-[hsl(234,29%,20%)] w-full rounded text-white py-3 hover:cursor-pointer hover:bg-gradient-to-r from-red-400 to-orange-500"
+          >
+            Dismiss message
+          </button>
+        </div>
       </div>
     </div>
+
     <!-- Success message end -->
-    <div class="attribution">
+    <div class="grid justify-items-center relative top-100 w-full  ">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
