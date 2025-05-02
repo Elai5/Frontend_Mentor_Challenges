@@ -33,17 +33,18 @@
     class="bg-[hsl(234,29%,20%)] min-h-screen flex items-center justify-center"
   >
     <div
-      class="grid grid-cols-1 md:grid grid-cols-2 gap-40 bg-white w-700 mx-4 rounded-xl p-6 relative left-50"
+      id="content"
+      class="grid grid-cols-1 gap-1 md:grid-cols-2 gap-40 bg-white mx-4 rounded-xl p-6 w-full max-w-4xl px-4 md:px-8"
     >
-      <div class="px-4 mt-10 ml-2 w-100">
+      <div class="px-4 mt-10 ml-2 w-full">
         <h1 class="text-4xl font-bold mb-4">
           <span class="bg-indigo-100">Stay</span> updated!
         </h1>
-        <p class="text-base mb-4 w-100">
+        <p class="text-base mb-4 w-full px-4">
           Join 60,000+ product managers receiving monthly updates on:
         </p>
         <!-- Sign-up form start -->
-        <ul class="flex flex-col">
+        <ul class="flex flex-col w-full px-3">
           <li class="flex gap-3 mb-1">
             <img class="h-5" src="./assets/images/icon-success.svg" alt="" />
             <p>Product discovery and building what matters</p>
@@ -69,6 +70,7 @@
           />
         </form>
         <button
+          id="toggle-btn"
           class="border border-1 rounded bg-[hsl(234,29%,20%)] text-white w-full px-3 py-2"
         >
           Subscribe to monthly newsletter
@@ -86,9 +88,12 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <div class="grid justify-items-center hidden">
+    <div
+      class="hidden flex flex-col gap-5 items-center justify-center py-12"
+      id="card"
+    >
       <div
-        class="bg-white w-105 h-auto flex flex-col justify-center rounded-xl px-10 py-5 relative top-50"
+        class="bg-white w-full px-5 h-auto flex flex-col justify-center rounded-xl px-10 py-5"
       >
         <div class="image">
           <img class="mb-6 w-10" src="/assets/images/icon-list.svg" alt="" />
@@ -103,20 +108,23 @@
             and click the button inside to confirm your subscription.
           </p>
           <button
+            id="dismiss"
             class="bg-[hsl(234,29%,20%)] w-full rounded text-white py-3 hover:cursor-pointer hover:bg-gradient-to-r from-red-400 to-orange-500"
           >
             Dismiss message
           </button>
         </div>
       </div>
+      <div class="text-white text-center mt-2 hidden" id="message">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Elaine Yvette</a>.
+      </div>
     </div>
 
     <!-- Success message end -->
-    <div class=" relative top-100 w-full left-0">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Elaine Yvette</a>.
-    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
