@@ -37,12 +37,13 @@ function updateMiddleSlide() {
 
 swiper.on("slideChangeTransitionEnd", updateMiddleSlide);
 swiper.on("init", updateMiddleSlide);
-swiper.init(); 
+swiper.init();
 
 document.addEventListener("DOMContentLoaded", () => {
   const openBtn = document.getElementById("open");
   const closeBtn = document.getElementById("close");
   const menu = document.getElementById("menu");
+  const menuLinks = menu.querySelectorAll("a");
 
   openBtn.addEventListener("click", () => {
     menu.classList.remove("hidden");
@@ -54,6 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.add("hidden");
     closeBtn.style.display = "none";
     openBtn.style.display = "inline";
+  });
+
+  // Close menu on link click
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      closeBtn.style.display = "none";
+      openBtn.style.display = "inline";
+    });
   });
 
   closeBtn.style.display = "none";
