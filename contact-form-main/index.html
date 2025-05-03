@@ -14,6 +14,11 @@
     />
     <title>Frontend Mentor | Contact form</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -29,6 +34,17 @@
   <body
     class="bg-[hsl(148,38%,91%)] min-h-screen flex items-center flex-col justify-center px-9"
   >
+    <div
+      class=" hidden bg-[hsl(187,24%,22%)] w-full text-sm md:bg-[hsl(187,24%,22%)] w-1/2 text-white rounded-xl px-4 py-5"
+      id="container"
+    >
+      <div class="flex gap-3 mb-2" id="header">
+        <img src="./assets/images/icon-success-check.svg" alt="" />
+        <h3>Message sent</h3>
+      </div>
+
+      <p>Thanks for completing the Form. We'll be in touch soon!</p>
+    </div>
     <div
       id="contacts-form"
       class="grid grid-cols-1 md:grid-cols-1 gap-4 rounded-xl p-8 w-full max-w-2xl px-4 md:px-8 bg-white text-black-500"
@@ -192,5 +208,9 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
     <script src="./script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>

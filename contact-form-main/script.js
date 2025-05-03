@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const radioError = document.getElementById("query-error");
   const messageFieldError = document.getElementById("message-error");
 
+  const showToast = document.getElementById("container");
+
   const button = document.getElementById("submit");
 
   button.addEventListener("click", (e) => {
