@@ -13,6 +13,7 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="./style.css" />
 
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
@@ -59,14 +60,21 @@
           </li>
         </ul>
 
-        <form class="mt-7 text-sm mb-4" action="">
+        <form id="email-form" class="mt-7 text-sm mb-4" action="">
           <p class="mb-1">Email address</p>
+          <span
+            id="email-error"
+            class="text-red-400 text-sm mt-1 block"
+            style="display: none; text-align: right"
+            >Valid email required</span
+          >
           <input
-            class="border border-2 border-gray-200 rounded w-full px-3 py-2"
+            class="border border-2 border-gray-200 rounded w-full px-3 py-2 focus:border-black focus:outline-none focus:ring-0"
             type="email"
             name="email"
             id="email"
             placeholder=" email@company.com"
+            required
           />
         </form>
         <button
