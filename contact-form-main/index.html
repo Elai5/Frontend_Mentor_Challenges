@@ -30,8 +30,8 @@
     class="bg-[hsl(148,38%,91%)] min-h-screen flex items-center flex-col justify-center px-9"
   >
     <div
-      id="contact-form"
-      class="grid grid-cols-1 gap-1 md:grid-cols-1 gap-4 rounded-xl p-8 w-full max-w-2xl px-4 md:px-8 bg-white text-black-500"
+      id="contacts-form"
+      class="grid grid-cols-1 md:grid-cols-1 gap-4 rounded-xl p-8 w-full max-w-2xl px-4 md:px-8 bg-white text-black-500"
     >
       <h1 class="text-2xl">Contact Us</h1>
       <form
@@ -39,27 +39,27 @@
         class="flex flex-col justify-center w-full px-2 py-1 text-[hsl(187,24%,22%)]"
         action=""
       >
-        <div class="flex gap-4 w-full h-20">
-          <label class="w-1/2 text-sm block" for="First Name"
-            ><span class="text-color:[hsl(174,5%,38%)]">First Name</span
+        <div class="grid md:flex gap-4 w-full mb-0">
+          <label class="w-full md:w-1/2 text-sm block" for="fname"
+            ><span class="text-[hsl(174,5%,38%)]">First Name</span
             ><span class="text-green-700">*</span
             ><input
               class="text-sm px-3 border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-1 mt-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
               type="text"
-              name="fname"
+              name="name"
               id="fname"
               required
-              autocomplete="given-name "
+              autocomplete="given-name"
             />
             <span
-              id="name-error"
-              class="text-red-400 text-sm mt-1 mb-4 block"
-              style="text-align: left"
+              id="fname-error"
+              class="text-red-400 text-sm mt-1 block"
+              style="text-align: left; display: none"
               >This field is required
             </span>
           </label>
-          <label class="w-1/2 text-sm mb-4 block" for="Last Name"
-            ><span class="text-color[hsl(186,15%,59%)]">Last Name</span>
+          <label class="md:w-1/2 text-sm mb-4 block" for="lName"
+            ><span class="text-[hsl(174,5%,38%)]">Last Name</span>
             <span class="text-green-700">*</span
             ><input
               class="text-sm px-3 border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-1 mt-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
@@ -70,20 +70,20 @@
               autocomplete="family-name"
             />
             <span
-              id="name-error"
-              class="text-red-400 text-sm mt-1 mb-2 block"
-              style="text-align: left"
+              id="lname-error"
+              class="text-red-400 text-sm mt-1 block"
+              style="text-align: left; display: none"
               >This field is required
             </span></label
           >
         </div>
         <div class="flex gap-4 w-full">
           <label
-            class="w-full text-color[hsl(186,15%,59%) text-sm mt-8"
-            for="Email Address"
+            class="md:w-full text-[hsl(187,24%,22%)] text-sm mt-1"
+            for="email"
             >Email Address <span class="text-green-700">*</span
             ><input
-              class="text-sm px-3 border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-1 mt-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
+              class="text-sm px-3 mb-7 border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-1 mt-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
               type="email"
               name="email"
               id="email"
@@ -92,24 +92,24 @@
               placeholder="email@example.com"
             />
             <span
-              id="name-error"
-              class="text-red-400 text-sm mt-1 mb-3 block"
-              style="text-align: left"
+              id="email-error"
+              class="text-red-400 text-sm mb-3 block"
+              style="text-align: left; display: none"
             >
               Please enter a valid email address
             </span></label
           >
         </div>
-        <div class="flex flex-col w-full text-sm text-[color:hsl(187,24%,22%)]">
+        <div class="flex flex-col w-full text-sm text-[hsl(187,24%,22%)]">
           <div class="flex items-center gap-1 mb-2">
             <label for="Query-type ">Query Type</label>
             <span class="text-green-700">*</span>
           </div>
-          <div class="flex gap-4 w-full">
+          <div class="grid md:flex gap-4 w-full">
             <div
-              class="w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 py-1 flex items-center"
+              class="md:w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 flex items-center"
             >
-              <label for="general" class="text-base flex items-center px-5">
+              <label class="text-sm flex items-center px-5" for="general">
                 <input
                   class="mr-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
                   type="radio"
@@ -120,9 +120,9 @@
             </div>
 
             <div
-              class="w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 py-1 flex items-center"
+              class="md:w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 py-1 flex items-center"
             >
-              <label for="support" class="text-base flex items-center px-5">
+              <label for="support" class="text-sm flex items-center px-5">
                 <input
                   class="mr-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
                   type="radio"
@@ -133,16 +133,16 @@
             </div>
           </div>
           <span
-            id="name-error"
+            id="query-error"
             class="text-red-400 text-sm mt-1 mb-2 block"
-            style="text-align: left"
+            style="text-align: left; display: none"
             >Please select a query type
           </span>
         </div>
 
         <div class="flex gap-4 w-full">
           <label
-            class="w-full text-[color:hsl(187,24%,22%)] text-sm mt-4"
+            class="w-full text-[hsl(187,24%,22%)] text-sm mt-4"
             for="Message"
             >Message<span class="text-green-700">*</span>
             <textarea
@@ -151,17 +151,17 @@
               id="message"
             ></textarea>
             <span
-              id="name-error"
+              id="message-error"
               class="text-red-400 text-sm mt-1 mb-2 block"
-              style="text-align: left"
+              style="text-align: left; display: none"
               >This field is required
             </span></label
           >
         </div>
         <div class="mt-6">
-          <p class="text-grey-700 hover:cursor-pointer">
+          <p class="text-gray-700 hover:cursor-pointer">
             <input
-              class="mr-2 focus :border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
+              class="mr-2 focus:border-[hsl(169,82%,27%)] focus:outline-none hover:cursor-pointer"
               type="checkbox"
               name="check"
               id="check"
@@ -170,13 +170,17 @@
             <span class="text-green-700">*</span>
           </p>
           <span
-            id="name-error"
+            id="check-error"
             class="text-red-400 text-sm mt-1 mb-2 block"
-            style="text-align: left"
+            style="text-align: left; display: none"
             >To submit this form, please consent to being contacted
           </span>
         </div>
-        <button class="bg-[hsl(166,54%,32%)] py-2 text-white rounded mt-6">
+        <button
+          class="bg-[hsl(166,54%,32%)] py-2 text-white rounded mt-6"
+          id="submit"
+          type="submit"
+        >
           Submit
         </button>
       </form>
@@ -187,5 +191,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
