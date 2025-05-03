@@ -1,0 +1,143 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Contact form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[hsl(148,38%,91%)] min-h-screen flex items-center flex-col justify-center px-9"
+  >
+    <div
+      id="contact-form"
+      class="grid grid-cols-1 gap-1 md:grid-cols-1 gap-4 rounded-xl p-8 w-full max-w-2xl px-4 md:px-8 bg-white text-black-500"
+    >
+      <h1 class="text-2xl">Contact Us</h1>
+      <form
+        id="contact-form"
+        class="flex flex-col justify-center w-full px-2 py-1 text-[hsl(187,24%,22%)]"
+        action=""
+      >
+        <div class="flex gap-4 w-full h-20">
+          <label class="w-1/2 text-sm block" for="First Name"
+            ><span class="text-color:[hsl(174,5%,38%)]">First Name</span
+            ><span class="text-green-700">*</span
+            ><input
+              class="text-sm border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mt-2"
+              type="text"
+              name="fname"
+              id="fname"
+              required
+              autocomplete="given-name "
+          /></label>
+          <label class="w-1/2 text-sm mb-4 block" for="Last Name"
+            ><span class="text-color[hsl(186,15%,59%)]">Last Name</span>
+            <span class="text-green-700">*</span
+            ><input
+              class="text-sm border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-4 mt-2"
+              type="text"
+              name="lname"
+              id="lname"
+              required
+              autocomplete="family-name"
+          /></label>
+        </div>
+        <div class="flex gap-4 w-full">
+          <label
+            class="w-full text-color[hsl(186,15%,59%) text-sm"
+            for="Email Address"
+            >Email Address <span class="text-green-700">*</span
+            ><input
+              class="text-sm border border-[hsl(186,15%,59%)] rounded-lg h-10 w-full mb-4 mt-2"
+              type="email"
+              name="email"
+              id="email"
+              required
+              autocomplete="email"
+          /></label>
+        </div>
+        <div class="flex flex-col w-full text-sm text-[color:hsl(187,24%,22%)]">
+          <div class="flex items-center gap-1 mb-2">
+            <label for="Query-type ">Query Type</label>
+            <span class="text-green-700">*</span>
+          </div>
+          <div class="flex gap-4 w-full">
+            <div
+              class="w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 py-1 flex items-center"
+            >
+              <label for="general" class="text-base flex items-center px-5">
+                <input
+                  class="mr-2"
+                  type="radio"
+                  name="query"
+                  id="general"
+                />General Enquiry
+              </label>
+            </div>
+            <div
+              class="w-1/2 border border-[hsl(186,15%,59%)] rounded-lg py-2 py-1 flex items-center"
+            >
+              <label for="support" class="text-base flex items-center px-5">
+                <input
+                  class="mr-2"
+                  type="radio"
+                  name="query"
+                  id="support"
+                />Support Request
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 w-full">
+          <label
+            class="w-full text-[color:hsl(187,24%,22%)] text-sm mt-4"
+            for="Message"
+            >Message<span class="text-green-700">*</span>
+            <textarea
+              class="w-full border border-[hsl(186,15%,59%)] h-20 rounded-lg mt-2"
+              name="message"
+              id="message"
+            ></textarea>
+          </label>
+        </div>
+        <div class="mt-6">
+          <p class="text-grey-700">
+            <input class="mr-2" type="checkbox" name="check" id="check" /> I
+            consent to being contacted by the team
+            <span class="text-green-700">*</span>
+          </p>
+        </div>
+        <button class="bg-[hsl(166,54%,32%)] py-2 text-white rounded mt-6">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
