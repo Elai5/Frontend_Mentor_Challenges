@@ -4,11 +4,29 @@ import React, { useEffect } from "react";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
-  const openMenu = document.getElementById("mobileNav");
+  useEffect(() => {
+    const openBtn = document.getElementById("openIcon");
+    const closeBtn = document.getElementById("closeIcon");
+    const mobileNav = document.getElementById("mobileNav");
+
+    const handleOpen = () => mobileNav?.classList.remove("hidden");
+    const handleClose = () => mobileNav?.classList.add("hidden");
+
+    if (openBtn && closeBtn && mobileNav) {
+      openBtn.addEventListener("click", handleOpen);
+      closeBtn.addEventListener("click", handleClose);
+    }
+    return () => {
+      if (openBtn && closeBtn) {
+        openBtn.removeEventListener("click", handleOpen);
+        closeBtn.removeEventListener("click", handleClose);
+      }
+    };
+  }, []);
 
   return (
-    <div className="w-full px-5 py-15">
-      <div className="flex justify-between">
+    <div className="py-6 md:py-15 :w-full px-5">
+      <div className="flex justify-between items-center">
         <img src={assets.logo} alt="" />
         <ul className="hidden md:flex gap-5 text-[hsl(236,13%,42%)] px-10 hover:cursor-pointer ">
           <a className="hover:text-red-400" href="">
@@ -27,36 +45,57 @@ const Navbar = () => {
             Categories
           </a>
         </ul>
-        <div className="md:hidden cursor-pointer" id="menu-open">
+        <div className="md:hidden cursor-pointer" id="openIcon">
           <img src={assets.menu} alt="" />
         </div>
       </div>
+
       {/* mobile navigation */}
       <div
-        className=" hidden absolute inset-y-0 right-0 px-5 py-4 cursor-pointer"
-        id="menu-close"
+        className=" hidden absolute h-full inset-y-0 right-0 px-5 py-4 cursor-pointer w-3/4 bg-white"
+        id="mobileNav"
       >
-        <div className="flex" id="mobileNav">
-          <img className="relative left-50" src={assets.menuclose} alt="" />
+        <div className="flex justify-between" id="mobileMenu">
+          <ul
+            className="flex flex-col gap-5 text-[hsl(236,13%,42%)] px-10 mt-10 hover:cursor-pointer "
+            id="mobileData"
+          >
+            <li>
+              <a className="hover:text-red-400 hover:cursor-pointer" href="">
+                Home
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-red-400" href="">
+                New
+              </a>
+            </li>
+            <li>
+              {" "}
+              <a className="hover:text-red-400" href="">
+                Popular
+              </a>
+            </li>
+            <li>
+              {" "}
+              <a className="hover:text-red-400" href="">
+                Trending
+              </a>
+            </li>
+            <li>
+              {" "}
+              <a className="hover:text-red-400" href="">
+                Categories
+              </a>
+            </li>
+          </ul>
+          <img
+            className="relative h-10"
+            src={assets.menuclose}
+            alt=""
+            id="closeIcon"
+          />
         </div>
-
-        <ul className="flex flex-col justify- gap-5 text-[hsl(236,13%,42%)]px-10 hover:cursor-pointer ">
-          <a className="hover:text-red-400" href="">
-            Home
-          </a>
-          <a className="hover:text-red-400" href="">
-            New
-          </a>
-          <a className="hover:text-red-400" href="">
-            Popular
-          </a>
-          <a className="hover:text-red-400" href="">
-            Trending
-          </a>
-          <a className="hover:text-red-400" href="">
-            Categories
-          </a>
-        </ul>
       </div>
     </div>
   );

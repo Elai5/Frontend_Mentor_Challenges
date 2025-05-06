@@ -19,7 +19,7 @@ const Content = () => {
                   The Bright Future of Web 3.0?
                 </h1>
               </div>
-              <div className="w-full mb-7 md:w-3/4 flex flex-col gap-3">
+              <div className="w-full mb-7 md:w-3/4 flex flex-col gap-3 text-[hsl(236,13%,42%)]">
                 {" "}
                 <p className="text-sm md:text-[hsl(236,13%,42%)]">
                   {" "}
@@ -27,7 +27,7 @@ const Content = () => {
                   the power of the platforms back into the hands of the people.
                   But is it really fulfilling its promise?
                 </p>
-                <button className="text-center w-1/2 md:px-8 py-3 bg-[hsl(5,85%,63%)] font-semibold text-sm cursor-pointer hover:bg-black hover:text-white">
+                <button className="text-center w-1/2 md:px-8 py-3 bg-[hsl(5,85%,63%)] font-semibold text-sm text-black cursor-pointer hover:bg-black hover:text-white">
                   READ MORE
                 </button>
               </div>
