@@ -101,7 +101,7 @@ const Content = () => {
           </div>
           <div className="flex gap-4 w-full">
             <div className="flex">
-              <img className="h-30 mb-3" src={assets.retro} alt="" />
+              <img className="h-30 mb-3" src={assets.top} alt="" />
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl font-extrabold">
@@ -118,7 +118,7 @@ const Content = () => {
           </div>
           <div className="flex gap-4 w-full">
             <div className="flex">
-              <img className="h-30" src={assets.retro} alt="" />
+              <img className="h-30" src={assets.gaming} alt="" />
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl font-extrabold">
