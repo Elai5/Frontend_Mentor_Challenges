@@ -6,7 +6,6 @@ import { assets } from "../assets/assets";
 const Content = () => {
   return (
     <div className="flex flex-col">
-    
       <div className="flex flex-col px-15 gap-15">
         <div className="flex justify-between gap-5 ">
           <div className="flex flex-col gap-4 ">
@@ -28,7 +27,7 @@ const Content = () => {
                   the power of the platforms back into the hands of the people.
                   But is it really fulfilling its promise?
                 </p>
-                <button className="px-8 py-3 bg-[hsl(5,85%,63%)] w-3/4 font-semibold text-sm">
+                <button className="px-8 py-3 bg-[hsl(5,85%,63%)] w-3/4 font-semibold text-sm cursor-pointer hover:bg-black hover:text-white">
                   READ MORE
                 </button>
               </div>
@@ -43,7 +42,9 @@ const Content = () => {
               <div className="flex flex-col gap-4">
                 <div className="border-b-1 border-[hsl(236,13%,42%)]">
                   {" "}
-                  <h2 className="mb-2 text-base">Hydrogen VS Electric Cars</h2>
+                  <h2 className="mb-2 text-base hover:text-[hsl(35,77%,62%)] hover:cursor-pointer">
+                    Hydrogen VS Electric Cars
+                  </h2>
                   <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
                     {" "}
                     Will hydrogen-fueled cars ever catch up to EVs?
@@ -51,7 +52,7 @@ const Content = () => {
                 </div>
                 <div className="border-b-1 border-[hsl(236,13%,42%)]">
                   {" "}
-                  <h2 className="mb-2 tetx-base">
+                  <h2 className="mb-2 tetx-base  hover:text-[hsl(35,77%,62%)] hover:cursor-pointer">
                     The Downsides of AI Artistry
                   </h2>
                   <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
@@ -62,7 +63,10 @@ const Content = () => {
                 </div>
                 <div className="border-b-1 border-[hsl(236,13%,42%)]">
                   {" "}
-                  <h2 className="mb-2 tetx-base"> Is VC Funding Drying Up?</h2>
+                  <h2 className="mb-2 tetx-base hover:text-[hsl(35,77%,62%)] hover:cursor-pointer">
+                    {" "}
+                    Is VC Funding Drying Up?
+                  </h2>
                   <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
                     Private funding by VC firms is down 50% YOY. We take a look
                     at what that means.
@@ -79,7 +83,10 @@ const Content = () => {
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl">01</h2>
-              <h3 className="font-bold"> Reviving Retro PCs</h3>
+              <h3 className="font-bold  hover:text-[hsl(5,85%,63%)] hover:cursor-pointer">
+                {" "}
+                Reviving Retro PCs
+              </h3>
               <p className="text-[hsl(236,13%,42%)] text-sm ">
                 What happens when old PCs are given modern upgrades?
               </p>
@@ -91,7 +98,10 @@ const Content = () => {
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl">02</h2>
-              <h3 className="font-bold"> Top 10 Laptops of 2022</h3>
+              <h3 className="font-bold hover:text-[hsl(5,85%,63%)] hover:cursor-pointer">
+                {" "}
+                Top 10 Laptops of 2022
+              </h3>
               <p className="text-[hsl(236,13%,42%)] text-sm ">
                 Our best picks for various needs and budgets.
               </p>
@@ -103,7 +113,10 @@ const Content = () => {
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl">03</h2>
-              <h3 className="font-bold"> The growth of gaming</h3>
+              <h3 className="font-bold hover:text-[hsl(5,85%,63%)] hover:cursor-pointer">
+                {" "}
+                The growth of gaming
+              </h3>
               <p className="text-[hsl(236,13%,42%)] text-sm ">
                 How the pandemic has sparked fresh opportunities.
               </p>
