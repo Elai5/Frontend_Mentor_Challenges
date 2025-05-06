@@ -6,28 +6,28 @@ import { assets } from "../assets/assets";
 const Content = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col px-15 gap-15">
-        <div className="flex justify-between gap-5 ">
+      <div className="w-full px-3 md:px-15 flex flex-col gap-15">
+        <div className="md:flex justify-between gap-5">
           <div className="flex flex-col gap-4 ">
             <div className="">
-              <img src={assets.webdesktop} alt="webdesktop" />
+              <img className="" src={assets.webdesktop} alt="webdesktop" />
             </div>
-            <div className="flex mt-6 ">
+            <div className="md:flex gap-2">
               <div>
-                <h1 className="font-bold text-5xl w-3/4">
+                <h1 className="text-3xl md:text-5xl font-bold w-3/4 ">
                   {" "}
                   The Bright Future of Web 3.0?
                 </h1>
               </div>
-              <div className="w-3/4 flex flex-col gap-3">
+              <div className="w-full mb-7 md:w-3/4 flex flex-col gap-3">
                 {" "}
-                <p className="mr-1 text-[hsl(236,13%,42%)]">
+                <p className="text-sm md:text-[hsl(236,13%,42%)]">
                   {" "}
                   We dive into the next evolution of the web that claims to put
                   the power of the platforms back into the hands of the people.
                   But is it really fulfilling its promise?
                 </p>
-                <button className="px-8 py-3 bg-[hsl(5,85%,63%)] w-3/4 font-semibold text-sm cursor-pointer hover:bg-black hover:text-white">
+                <button className="text-center w-1/2 md:px-8 py-3 bg-[hsl(5,85%,63%)] font-semibold text-sm cursor-pointer hover:bg-black hover:text-white">
                   READ MORE
                 </button>
               </div>
@@ -35,7 +35,7 @@ const Content = () => {
           </div>
 
           <div className="flex">
-            <div className="w-full bg-[hsl(240,100%,5%)] text-white px-4 py-6">
+            <div className="w-full bg-[hsl(240,100%,5%)] text-white px-2 py-6">
               <h2 className="text-[hsl(35,77%,62%)] text-3xl mb-4 font-semibold">
                 New
               </h2>
@@ -45,7 +45,7 @@ const Content = () => {
                   <h2 className="mb-2 text-base hover:text-[hsl(35,77%,62%)] hover:cursor-pointer">
                     Hydrogen VS Electric Cars
                   </h2>
-                  <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
+                  <p className="text-xs md:mb-4 font-light text-[hsl(233,8%,79%)]">
                     {" "}
                     Will hydrogen-fueled cars ever catch up to EVs?
                   </p>
@@ -55,7 +55,7 @@ const Content = () => {
                   <h2 className="mb-2 tetx-base  hover:text-[hsl(35,77%,62%)] hover:cursor-pointer">
                     The Downsides of AI Artistry
                   </h2>
-                  <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
+                  <p className="text-xs md:mb-4 font-light text-[hsl(233,8%,79%)] w-full">
                     {" "}
                     What are the possible adverse effects of on-demand AI image
                     generation?
@@ -67,7 +67,7 @@ const Content = () => {
                     {" "}
                     Is VC Funding Drying Up?
                   </h2>
-                  <p className="mb-4 text-sm font-light text-[hsl(233,8%,79%)]">
+                  <p className="text-xs md:mb-4 font-light text-[hsl(233,8%,79%)]">
                     Private funding by VC firms is down 50% YOY. We take a look
                     at what that means.
                   </p>
@@ -76,10 +76,11 @@ const Content = () => {
             </div>
           </div>
         </div>
-        <div className="flex">
+
+        <div className="md:flex">
           <div className="flex gap-4 w-full">
             <div className="flex ">
-              <img className="h-30" src={assets.retro} alt="" />
+              <img className="h-30 mb-3" src={assets.retro} alt="" />
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl">01</h2>
@@ -94,7 +95,7 @@ const Content = () => {
           </div>
           <div className="flex gap-4 w-full">
             <div className="flex">
-              <img className="h-30" src={assets.retro} alt="" />
+              <img className="h-30 mb-3" src={assets.retro} alt="" />
             </div>
             <div className="flex flex-col w-3/4">
               <h2 className="text-[hsl(5,85%,63%)] text-2xl">02</h2>
