@@ -25,25 +25,36 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="py-6 md:py-15 :w-full px-5">
+    <div className="py-3 px-4 md:px-15 md:pt-15 w-full ">
       <div className="flex justify-between items-center">
         <img src={assets.logo} alt="" />
-        <ul className="hidden md:flex gap-5 text-[hsl(236,13%,42%)] px-10 hover:cursor-pointer ">
-          <a className="hover:text-red-400" href="">
-            Home
-          </a>
-          <a className="hover:text-red-400" href="">
-            New
-          </a>
-          <a className="hover:text-red-400" href="">
-            Popular
-          </a>
-          <a className="hover:text-red-400" href="">
-            Trending
-          </a>
-          <a className="hover:text-red-400" href="">
-            Categories
-          </a>
+        <ul className="hidden md:flex gap-5 text-[hsl(236,13%,42%)] text-xl px-10 hover:cursor-pointer ">
+          <li>
+            <a className="hover:text-red-400" href="">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-red-400" href="">
+              New
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-red-400" href="">
+              Popular
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-red-400" href="">
+              Trending
+            </a>
+          </li>
+          <li>
+            {" "}
+            <a className="hover:text-red-400" href="">
+              Categories
+            </a>
+          </li>
         </ul>
         <div className="md:hidden cursor-pointer" id="openIcon">
           <img src={assets.menu} alt="" />
