@@ -1,14 +1,16 @@
 /** @format */
 
 import React from "react";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Destination from "./components/Destination";
 
 const App = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Home />
+      <Destination />
     </div>
   );
 };

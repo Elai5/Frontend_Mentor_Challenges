@@ -5,35 +5,40 @@ import { assets } from "../assets/assets";
 
 const Navbar = () => {
   return (
-    <div className="absolute flex flex-col-2 justify-between top-0 left-0 w-full z-100">
-      <div className="flex">
-        <img className="" src={assets.logo} alt="" />
+    <div className="w-full absolute flex flex-col-2 items-center justify-between gap-10 top-6 left-0 z-100 max-w-full px-0">
+      <div className="flex max-w-full">
+        <img className="object-fit h-auto pl-5" src={assets.logo} alt="" />
       </div>
+      <hr className="hidden w-1/2 h-px mx-auto my-4 bg-gray-200 border-0 rounded-sm md:my-3 dark:bg-gray-700 z-10"></hr>
 
-      <div className="bg-amber-300">
-        <ul className="flex ">
-          <li className="text-white">
+      <div className="hidden md:flex justify-center items-center bg-blue-900/10 backdrop-blur-sm py-7 w-3/4 relative px-17">
+        <ul className="flex text-xs tracking-tight w-full">
+          <li className="text-gray-400 hover:border-b-2 hover:border-b-white  hover:cursor-pointer">
             <a href="">
-              <span className="px-3 font-bold">00</span>HOME
+              <span className="px-3 font-700 text-white">00</span>HOME
             </a>
           </li>
-          <li className="text-white">
+          <li className="text-gray-300 hover:border-b-2 hover:border-b-white  hover:cursor-pointer">
             <a href="">
-              <span className="px-3 font-bold">01</span>DESTINATION
+              <span className="px-3 font-700 text-white">01</span>DESTINATION
             </a>
           </li>
-          <li className="text-white">
+          <li className="text-gray-300 font-200">
             <a href="">
-              <span className="px-3 font-bold">02</span>CREW
+              <span className="px-3 font-bold text-white">02</span>CREW
             </a>
           </li>
-          <li className="text-white">
+          <li className="text-gray-400 font-400">
             <a href="">
-              <span className="px-3 font-bold">03</span>TECHNOLOGY
+              <span className="px-3 text-white">03</span>TECHNOLOGY
             </a>
           </li>
         </ul>
       </div>
+      <div className="hidden">
+        <img src={assets.iconHamburger} alt="" />
+      </div>
+      {/* // mobile nav */}
     </div>
   );
 };
