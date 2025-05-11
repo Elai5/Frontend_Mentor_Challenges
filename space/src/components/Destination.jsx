@@ -26,7 +26,7 @@ const Destination = () => {
             </div>
             <div className="flex flex-col gap-8 w-1/2">
               <div className="flex">
-                <ul className="flex gap-5">
+                <ul className="flex gap-5 hover:cursor-pointer">
                   <li>
                     <a href="">MOON</a>
                   </li>

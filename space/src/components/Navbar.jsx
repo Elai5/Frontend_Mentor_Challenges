@@ -25,7 +25,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="text-gray-300 font-200">
-            <Link to="">
+            <Link to="/crew">
               <span className="px-3 font-bold text-white">02</span>CREW
             </Link>
           </li>
