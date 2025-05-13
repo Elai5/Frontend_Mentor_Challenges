@@ -30,7 +30,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="text-gray-400 font-400">
-            <Link to="">
+            <Link to="/technology">
               <span className="px-3 text-white">03</span>TECHNOLOGY
             </Link>
           </li>

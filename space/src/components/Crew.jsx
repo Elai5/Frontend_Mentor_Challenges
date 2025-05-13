@@ -23,8 +23,8 @@ const Crew = () => {
         style={{ backgroundImage: `url(${assets.backgroundCrew})` }}
         id="crew"
       >
-        <div className="w-full flex flex-col gap-20 px-20 py-5">
-          <div>
+        <div className="px-0 gap-5 md:px-20 w-full flex flex-col mb:gap-20 py-5">
+          <div className="text-center md:text-start">
             <h2 className="text-white">
               <span className="text-gray-600 mr-5 ">01</span>MEET YOUR CREW
             </h2>
@@ -33,13 +33,15 @@ const Crew = () => {
             <Slider {...settings} className="">
               {crew.map((member, index) => (
                 <div key={index} className="w-full">
-                  <div className="flex flex-col md:flex-row items-center gap-1 w-full">
-                    <div className="flex flex-col gap-3 ">
-                      <h2 className="text-base text-gray-400">{member.role}</h2>
-                      <h1 className="text-5xl text-white uppercase">
+                  <div className="lg:flex flex-row items-center gap-1 w-full">
+                    <div className="lg:items-start w-full items-center text-center flex flex-col gap-3 ">
+                      <h2 className="lg:text-start text-sm md:text-base text-gray-400">
+                        {member.role}
+                      </h2>
+                      <h1 className="lg:text-5xl text-start md:text-3xl text-white uppercase">
                         {member.name}
                       </h1>
-                      <p className="text-sm text-gray-300 w-3/4 leading-6.5">
+                      <p className="w-full md:w-3/4 text-xs text-gray-300 leading-6.5 lg:text-start">
                         {member.bio}
                       </p>
                     </div>
@@ -47,7 +49,7 @@ const Crew = () => {
                       <img
                         src={member.images}
                         alt={member.name}
-                        className="w-64 h-auto object-contain"
+                        className=" mt-4 w-40 md:w-64 h-auto object-contain"
                       />
                     </div>
                   </div>

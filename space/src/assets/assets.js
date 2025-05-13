@@ -1,6 +1,7 @@
 /** @format */
 import backgroundHome from "./background-home-desktop.jpg";
 import backgroundCrew from "./background-crew-desktop.jpg";
+import backgroundTechnology from "./background-technology-desktop.jpg";
 import backgroundDestination from "./background-destination-desktop.jpg";
 import imageAnousheh from "./image-anousheh-ansari.png";
 import imageDouglas from "./image-douglas-hurley.png";
@@ -21,6 +22,7 @@ export const assets = {
   backgroundHome,
   backgroundCrew,
   backgroundDestination,
+  backgroundTechnology,
   imageAnousheh,
   imageDouglas,
   imageMark,
