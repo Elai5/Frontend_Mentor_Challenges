@@ -15,8 +15,9 @@ import iconClose from "./icon-close.svg";
 import iconHamburger from "./icon-hamburger.svg";
 import logo from "./logo.svg";
 import imageLaunch from "./image-launch-vehicle-portrait.jpg";
-import imageSpaceCapsule from "./image-space-capsule-landscape.jpg";
-import imageSpacePort from "./image-spaceport-landscape.jpg";
+import imageLaunchDes from "./image-launch-vehicle-landscape.jpg";
+import imageSpaceCapsule from "./image-space-capsule-portrait.jpg";
+import imageSpacePort from "./image-spaceport-portrait.jpg";
 
 export const assets = {
   backgroundHome,
@@ -35,6 +36,7 @@ export const assets = {
   iconHamburger,
   logo,
   imageLaunch,
+  imageLaunchDes,
   imageSpaceCapsule,
   imageSpacePort,
 };
@@ -69,6 +71,7 @@ export const technology = [
     title: "THE TERMINOLOGY...",
     name: "Launch vehicle",
     images: imageLaunch,
+    image: imageLaunchDes,
     description:
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
   },
