@@ -49,19 +49,19 @@ const Technology = () => {
 
             <div className="w-full lg:w-full">
               <Swiper
-                direction={"vertical"}
+                direction={window.innerWidth < 768 ? "horizontal" : "vertical"}
                 pagination={{ clickable: true }}
                 modules={[Pagination, Navigation]}
                 navigation={false}
-                className="h-[500px] sm:h-[550px] md:h-[500px] w-full"
+                className="h-[500px] sm:h-[700px] md:h-[500px] w-full"
                 onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 ref={swiperRef}
               >
                 {technology.map((techItem, index) => (
                   <SwiperSlide key={index}>
                     <div className="w-full flex flex-col md:flex-col lg:flex-row justify-center items-center h-full gap-15 md:gap-8">
-                      <div className="text-center lg:text-left flex-1 px-4 w-full ">
-                        <h3 className="text-gray-500 text-sm md:text-2xl">
+                      <div className="text-center lg:text-left flex-1 px-4 w-full  ">
+                        <h3 className="text-gray-500 text-sm md:text-2xl mt-13 md:mt-50">
                           {techItem.title}
                         </h3>
                         <h2 className="text-white uppercase text-sm md:text-3xl lg:text-5xl my-2">
