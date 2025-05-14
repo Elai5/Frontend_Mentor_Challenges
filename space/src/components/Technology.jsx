@@ -30,7 +30,7 @@ const Technology = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:px-20">
             <div className="flex flex-row lg:flex-col gap-4">
               {technology.map((_, index) => (
                 <button
@@ -61,7 +61,7 @@ const Technology = () => {
                   <SwiperSlide key={index}>
                     <div className="w-full flex flex-col md:flex-col lg:flex-row justify-center items-center h-full gap-15 md:gap-8">
                       <div className="text-center lg:text-left flex-1 px-4 w-full  ">
-                        <h3 className="text-gray-500 text-sm md:text-2xl mt-13 md:mt-50">
+                        <h3 className="mt-10 text-gray-500 text-sm md:text-2xl md:mt-13">
                           {techItem.title}
                         </h3>
                         <h2 className="text-white uppercase text-sm md:text-3xl lg:text-5xl my-2">

@@ -30,7 +30,7 @@ const Crew = () => {
                 <span className="text-gray-600 mr-4">02</span>MEET YOUR CREW
               </h1>
             </div>
-            <div className="w-full flex flex-col gap-5 px-5">
+            <div className="w-full flex flex-col justify-center gap-5 md:px-5 lg:px-40">
               <Slider {...settings} className="">
                 {crew.map((member, index) => (
                   <div key={index} className="w-full">

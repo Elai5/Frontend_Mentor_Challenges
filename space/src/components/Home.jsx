@@ -14,7 +14,7 @@ const Home = () => {
       {/* <Navbar /> */}
       <div className="container flex flex-col md:flex-row justify-center items-center gap-6">
         <div
-          className="mt-14 md:flex flex-col gap-5 justify-center w-1/2"
+          className="mt-14 gap-2 md:gap-5 flex flex-col justify-center w-1/2"
           id="home-text"
         >
           <h2 className="text-gray-300 text-sm">SO, YOU WANT TO TRAVEL TO</h2>
