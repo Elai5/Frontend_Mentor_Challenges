@@ -26,7 +26,8 @@ const Technology = () => {
         <div className="">
           <div className="text-white mb-8 px-6">
             <h1 className="text-sm md:text-3xl font-semibold">
-              <span className="text-gray-600 mr-4">03</span>SPACE LAUNCH 101
+              <span className="text-gray-600 mr-4 font-secondary">03</span>SPACE
+              LAUNCH 101
             </h1>
           </div>
 
