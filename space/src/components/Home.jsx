@@ -17,8 +17,13 @@ const Home = () => {
           className="mt-14 gap-2 md:gap-5 flex flex-col justify-center w-1/2"
           id="home-text"
         >
-          <h2 className="text-gray-300 text-sm">SO, YOU WANT TO TRAVEL TO</h2>
-          <h3 className="text-white text-3xl md:text-8xl" id="heading">
+          <h2 className="text-gray-300 text-sm font-primary">
+            SO, YOU WANT TO TRAVEL TO
+          </h2>
+          <h3
+            className="text-white text-3xl md:text-8xl font-secondary"
+            id="heading"
+          >
             SPACE
           </h3>
           <p className="w-full md:w-3/4 text-sm text-gray-400">
