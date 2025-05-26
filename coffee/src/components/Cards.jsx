@@ -6,7 +6,7 @@ import { assets } from "../assets/assets";
 const Card = ({ coffee }) => {
   const { name, image, price, rating, votes, available, popular } = coffee;
   return (
-    <div className="p-4 rounded shadow-lg">
+    <div className="p-4 rounded shadow-lg hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out">
       <div className="relative w-full h-40 ">
         <img
           src={image}
