@@ -1,6 +1,5 @@
 /** @format */
 
-import { img, p, span } from "framer-motion/client";
 import React from "react";
 import { assets } from "../assets/assets";
 
