@@ -25,12 +25,12 @@ const Card = ({ coffee }) => {
         <div className="flex justify-between">
           <h2 className="text-sm md:text-xl font-bold">{name}</h2>
           <p className="p-2 bg-[hsl(144,42%,82%)] rounded text-black text-xs md:text-base">
-            ${price}
+            {price}
           </p>
         </div>
         <div className="flex justify-between items-center text-xs md:text-base">
           {rating && (
-            <p className="flex">
+            <p className="flex items-center">
               {" "}
               <img src={assets.star} alt="star" />
               {rating}
@@ -40,10 +40,12 @@ const Card = ({ coffee }) => {
           {!available && (
             <span className="text-xs md:text-sm text-red-500">Sold out </span>
           )}
-          <div className="flex items-center gap-2 text-gray-400">
-            {!rating && <img src={assets.newstar} />}
-            <span>No ratings</span>
-          </div>
+          {!rating && (
+            <div className="flex items-center gap-2 text-gray-400">
+              <img src={assets.newstar} alt="" />
+              <span>No ratings</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

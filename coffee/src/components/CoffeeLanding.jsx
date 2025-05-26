@@ -7,7 +7,7 @@ import CoffeeList from "./CoffeeList";
 
 const CoffeeLanding = () => {
   return (
-    <div className="h-screen bg-black">
+    <div className="h-screen">
       <div className="h-screen relative w-full bg-black">
         <picture>
           <source media="(min-width:640px)" srcSet={assets.desktop_bg} />
