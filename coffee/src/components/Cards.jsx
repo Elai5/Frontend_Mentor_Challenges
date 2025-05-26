@@ -37,7 +37,9 @@ const Card = ({ coffee }) => {
             </p>
           )}
           {!available && (
-            <span className="text-xs md:text-sm text-red-500">Sold out </span>
+            <span className="text-xs md:text-sm text-[hsl(10,63%,59%)] font-bold">
+              Sold out{" "}
+            </span>
           )}
           {!rating && (
             <div className="flex items-center gap-2 text-gray-400">
