@@ -1,6 +1,6 @@
 /** @format */
 
-import { p, span } from "framer-motion/client";
+import { img, p, span } from "framer-motion/client";
 import React from "react";
 import { assets } from "../assets/assets";
 
@@ -38,8 +38,12 @@ const Card = ({ coffee }) => {
             </p>
           )}
           {!available && (
-            <span className="text-sm text-red-500">Sold out </span>
+            <span className="text-xs md:text-sm text-red-500">Sold out </span>
           )}
+          <div className="flex items-center gap-2 text-gray-400">
+            {!rating && <img src={assets.newstar} />}
+            <span>No ratings</span>
+          </div>
         </div>
       </div>
     </div>
