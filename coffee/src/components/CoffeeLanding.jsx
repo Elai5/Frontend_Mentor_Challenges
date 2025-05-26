@@ -37,10 +37,12 @@ const CoffeeLanding = () => {
                 <br /> batches and shipped fresh weekly
               </p>
               <div className="flex gap-4 mt-3">
-                <button className="bg-gray-500 text-white p-2 rounded-lg text-sm">
+                <button className="bg-gray-500 text-white p-2 rounded-lg text-sm hover:cursor-pointer hover:bg-gray-800">
                   All Products
                 </button>
-                <button>Available Now</button>
+                <button className="hover:bg-gray-800 cursor-pointer border-gray-500 rounded-lg p-2">
+                  Available Now
+                </button>
               </div>
             </div>
           </div>
