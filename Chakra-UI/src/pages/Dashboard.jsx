@@ -24,7 +24,12 @@ export default function Dashboard() {
     <SimpleGrid spacing={10} minChildWidth="300px">
       {tasks &&
         tasks.map((task) => (
-          <Card key={task.id}>
+          <Card
+            key={task.id}
+            borderTop={"8px"}
+            borderColor={"purple.400"}
+            bg={"white"}
+          >
             <CardHeader>
               <Flex>
                 <Box w="50px" h="50px">

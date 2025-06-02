@@ -13,7 +13,7 @@ import {
 
 export const Navbar = () => {
   return (
-    <Flex as="nav" p="10px">
+    <Flex as="nav" p="10px" mb={"40px"}>
       <Heading as="h1">Doja Tasks</Heading>
       <Spacer></Spacer>
 
