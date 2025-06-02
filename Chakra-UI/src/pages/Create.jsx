@@ -9,12 +9,12 @@ import {
   FormLabel,
   Textarea,
 } from "@chakra-ui/react";
-import { Form } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 
 export default function Create() {
   return (
     <Box maxW="480px">
-      <Form>
+      <Form method="post" action="/create">
         <FormControl isRequired mb={"40px"}>
           <FormLabel>Task Name:</FormLabel>
           <input type="text" name="title" id="" />
@@ -44,3 +44,16 @@ export default function Create() {
     </Box>
   );
 }
+
+export const createAction = async ({ request }) => {
+  const data = await request.formData();
+
+  const task = {
+    title: data.get("title"),
+    description: data.get("description"),
+    isPriority: data.get("isPriority") === "",
+  };
+  console.log(task);
+
+  return redirect("/");
+};
