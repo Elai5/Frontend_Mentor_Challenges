@@ -22,7 +22,7 @@ export const Navbar = () => {
           M
         </Box>
         <Text>gray@netnija.dev</Text>
-        <Button>LogOut</Button>
+        <Button colorScheme="purple">LogOut</Button>
       </HStack>
     </Flex>
     // <Flex bg="gray.200" justify="space-between" wrap="wrap" gap="2">
