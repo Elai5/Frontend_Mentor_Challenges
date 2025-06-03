@@ -1,6 +1,7 @@
 /** @format */
 
 // import React from 'react'
+import { UnlockIcon } from "@chakra-ui/icons";
 import {
   Flex,
   Box,
@@ -21,6 +22,9 @@ export const Navbar = () => {
       description: "succesfully logged out",
       duration: 5000,
       isClosable: true,
+      status: "success",
+      position: "top",
+      icon: <UnlockIcon />,
     });
   };
 
