@@ -12,6 +12,7 @@ import {
   HStack,
   useToast,
   Avatar,
+  AvatarBadge,
 } from "@chakra-ui/react";
 
 export const Navbar = () => {
@@ -35,7 +36,13 @@ export const Navbar = () => {
       <Spacer></Spacer>
 
       <HStack spacing="20px">
-        <Avatar name="mario" bg={"purple.400"} src="/img/mario.png"></Avatar>
+        <Avatar name="mario" bg={"purple.400"} src="/img/mario.png">
+          <AvatarBadge width={"1.3em"} bg={"teal"}>
+            <Text fontSize={"xs"} color={"White"}>
+              3
+            </Text>
+          </AvatarBadge>
+        </Avatar>
         <Text>gray@netnija.dev</Text>
         <Button colorScheme="purple" onClick={showToast}>
           LogOut
