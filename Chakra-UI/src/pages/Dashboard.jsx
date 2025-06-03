@@ -13,6 +13,7 @@ import {
   HStack,
   Button,
   Divider,
+  Avatar,
 } from "@chakra-ui/react";
 import { div } from "framer-motion/client";
 import { useLoaderData } from "react-router-dom";
@@ -31,10 +32,8 @@ export default function Dashboard() {
             bg={"white"}
           >
             <CardHeader>
-              <Flex>
-                <Box w="50px" h="50px">
-                  <Text>AV</Text>
-                </Box>
+              <Flex gap={"5"}>
+                <Avatar src={task.img}></Avatar>
                 <Box>
                   <Heading as={"h3"} size={"sm"}>
                     {task.title}
