@@ -70,19 +70,20 @@ const MainCard = () => {
 
             <Heading
               as="h1"
-              fontSize={{ base: "3xl" }}
+              fontSize={{ base: "2xl", sm: "sm", md: "3xl" }}
               // textStyle="3xl"
               color="#1C232B"
               fontWeight="700"
               lineHeight={{ base: "29px", md: "32px" }}
-              maxW={{ base: "300px", md: "250px", lg: "200px" }}
+              maxW={{ base: "240px", md: "250px", lg: "200px" }}
             >
               Gabrielle Essence Eau De Parfum
             </Heading>
             <Text
-              fontSize={{ base: "sm", md: "base", xl: "lg" }}
+              fontSize={{ base: "sm", sm: "xs", md: "base", xl: "lg" }}
               maxW={{ base: "270px" }}
               color={"#6c7289"}
+              fontFamily={"Montserrat"}
             >
               A floral, solar and voluptuous interpretation composed by Olivier
               Polge,Perfumer-Creator for the House of CHANEL.
