@@ -24,9 +24,11 @@ const MainCard = () => {
       minH={"100vh"}
       display={"flex"}
       alignItems={"center"}
-      justifyContent={"center"}
+      justifyContent={{ base: "stretch", md: "center" }}
+      // justifyContent={"center"}
       maxW={"100vw"}
       px={{ base: "10px" }}
+      w="100%"
     >
       <Flex
         borderRadius="lg"
@@ -115,7 +117,11 @@ const MainCard = () => {
               cursor={"pointer"}
             >
               <Image src={images.cartIcon} boxSize="12px"></Image>
-              <Text fontWeight={"bolder"} fontSize={{ sm: "xl" }}>
+              <Text
+                fontWeight={"bolder"}
+                fontSize={{ sm: "xl" }}
+                color={"white"}
+              >
                 Add to Cart
               </Text>
             </Button>
