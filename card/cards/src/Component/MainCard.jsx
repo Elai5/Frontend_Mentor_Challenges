@@ -64,7 +64,7 @@ const MainCard = () => {
               {" "}
               PERFUME
             </Heading>
-            <Heading
+            {/* <Heading
               as={h1}
               textStyle={"3xl"}
               color={"#1C232B"}
@@ -75,13 +75,23 @@ const MainCard = () => {
               Gabrielle <br />
               Essence Eau <br />
               De Parfum
+            </Heading> */}
+            <Heading
+              as="h1"
+              textStyle="3xl"
+              color="#1C232B"
+              fontWeight="700"
+              lineHeight="28px"
+              maxW={{ base: "300px", lg: "200px" }}
+            >
+              Gabrielle Essence Eau De Parfum
             </Heading>
             <Text
               fontSize={{ base: "sm", sm: "xl", lg: "lg" }}
               color={"#6c7289"}
             >
-              A floral, solar and voluptuous interpretation composed by Iliver
-              Polge, Perfume-Creator for the House of CHANEL.
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
             </Text>
             <HStack gap={4}>
               <Text
