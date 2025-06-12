@@ -54,7 +54,7 @@ const MainCard = () => {
             align="start"
             textAlign="left"
             py={"4"}
-            justifyContent={"space-around"}
+            justifyContent={{ base: "stretch", md: "center" }}
             h={"100%"}
           >
             <Heading
