@@ -71,8 +71,6 @@ const MainCard = () => {
               fontWeight={"semibold"}
               textStyle={"xs"}
               letterSpacing={"3px"}
-              role="note"
-              aria-label="Product category"
             >
               {" "}
               PERFUME
