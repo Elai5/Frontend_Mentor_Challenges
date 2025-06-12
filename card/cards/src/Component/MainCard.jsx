@@ -26,11 +26,12 @@ const MainCard = () => {
       alignItems={"center"}
       justifyContent={"center"}
       maxW={"100vw"}
+      px={{ base: "10px" }}
     >
       <Flex
         borderRadius="lg"
         bg={"#ffffff"}
-        width={{ lg: "58%", xl: "50%" }}
+        width={{ lg: "58%", xl: "45%" }}
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box
@@ -64,47 +65,38 @@ const MainCard = () => {
               {" "}
               PERFUME
             </Heading>
-            {/* <Heading
-              as={h1}
-              textStyle={"3xl"}
-              color={"#1C232B"}
-              fontWeight={"700"}
-              lineHeight={"28px"}
-            >
-              {" "}
-              Gabrielle <br />
-              Essence Eau <br />
-              De Parfum
-            </Heading> */}
+
             <Heading
               as="h1"
-              textStyle="3xl"
+              fontSize={{ base: "3xl" }}
+              // textStyle="3xl"
               color="#1C232B"
               fontWeight="700"
-              lineHeight="28px"
-              maxW={{ base: "300px", lg: "200px" }}
+              lineHeight={{ base: "29px", md: "32px" }}
+              maxW={{ base: "300px", md: "250px", lg: "200px" }}
             >
               Gabrielle Essence Eau De Parfum
             </Heading>
             <Text
-              fontSize={{ base: "sm", sm: "xl", lg: "lg" }}
+              fontSize={{ base: "sm", md: "base", xl: "lg" }}
+              maxW={{ base: "270px" }}
               color={"#6c7289"}
             >
               A floral, solar and voluptuous interpretation composed by Olivier
-              Polge, Perfumer-Creator for the House of CHANEL.
+              Polge,Perfumer-Creator for the House of CHANEL.
             </Text>
             <HStack gap={4}>
               <Text
                 color={"#3C8067"}
                 fontWeight={"bold"}
                 fontFamily={"Fraunces"}
-                textStyle={"2xl"}
+                fontSize={"3xl"}
               >
                 $149.99
               </Text>
               <Text
                 color={"#6c7289"}
-                textStyle={"xs"}
+                textStyle={"md"}
                 textDecoration={"line-through"}
               >
                 {" "}
