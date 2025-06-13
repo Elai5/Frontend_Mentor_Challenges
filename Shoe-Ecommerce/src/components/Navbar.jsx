@@ -80,6 +80,32 @@ const Navbar = () => {
         </HStack>
         {/* <Divider></Divider> */}
       </Flex>
+      <Collapse in={isOpen} animateOpacity>
+        <Box
+          display={{ md: "none" }}
+          px={4}
+          pb={4}
+          color={"blackAlpha.900"}
+          fontWeight={"bold"}
+          width={"150px"}
+        >
+          <Link display="block" py={2} href="#">
+            Collections
+          </Link>
+          <Link display="block" py={2} href="#">
+            Men
+          </Link>
+          <Link display="block" py={2} href="#">
+            Women
+          </Link>
+          <Link display="block" py={2} href="#">
+            About
+          </Link>
+          <Link display="block" py={2} href="#">
+            Contact
+          </Link>
+        </Box>
+      </Collapse>
     </Box>
   );
 };
