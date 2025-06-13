@@ -10,7 +10,13 @@ import {
   Image,
   useDisclosure,
   IconButton,
-  Collapse,
+  // Collapse,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  VStack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 // import { HambugerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -19,7 +25,7 @@ import { assets } from "../assets/asset";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box borderBottom={"1px solid"} borderColor={"#b6bcc8"}>
       <Flex
@@ -41,10 +47,10 @@ const Navbar = () => {
           <Box display={"flex"} gap={1} alignItems={"center"}>
             <Box>
               <IconButton
-                icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                aria-label="Toggle Menu"
+                icon={<HamburgerIcon />}
+                aria-label="Open Menu"
                 display={{ base: "inline-flex", md: "none" }}
-                onClick={onToggle}
+                onClick={onOpen}
                 variant={"ghost"}
               />
             </Box>
@@ -80,32 +86,21 @@ const Navbar = () => {
         </HStack>
         {/* <Divider></Divider> */}
       </Flex>
-      <Collapse in={isOpen} animateOpacity>
-        <Box
-          display={{ md: "none" }}
-          px={4}
-          pb={4}
-          color={"blackAlpha.900"}
-          fontWeight={"bold"}
-          width={"150px"}
-        >
-          <Link display="block" py={2} href="#">
-            Collections
-          </Link>
-          <Link display="block" py={2} href="#">
-            Men
-          </Link>
-          <Link display="block" py={2} href="#">
-            Women
-          </Link>
-          <Link display="block" py={2} href="#">
-            About
-          </Link>
-          <Link display="block" py={2} href="#">
-            Contact
-          </Link>
-        </Box>
-      </Collapse>
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen} size={"xs"}>
+        <DrawerOverlay />
+        <DrawerContent w="75vw" maxW={"75vw"} bg={"white"}>
+          <DrawerCloseButton mt={4} />
+          <DrawerBody mt={10}>
+            <VStack align="start" spacing={4} fontWeight="bold">
+              <Link href="#">Collections</Link>
+              <Link href="#">Men</Link>
+              <Link href="#">Women</Link>
+              <Link href="#">About</Link>
+              <Link href="#">Contact</Link>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 };
