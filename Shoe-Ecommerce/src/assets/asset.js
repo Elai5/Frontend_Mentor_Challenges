@@ -2,7 +2,7 @@
 import imageAvatar from "./image-avatar.png";
 import logo from "./logo.svg";
 import cartIcon from "./icon-cart.svg";
-
+import menuIcon from "./icon-menu.svg";
 // import imageProduct1Thumbnail from "./image-product-1-thumbnail.jpg";
 
 export const assets = {
@@ -19,7 +19,7 @@ export const assets = {
   //   previousIcon,
   //   nextIcon,
   //   minusIcon,
-  //   menuIcon,
+  menuIcon,
   //   deleteIcon,
   //   closeIcon,
   cartIcon,
