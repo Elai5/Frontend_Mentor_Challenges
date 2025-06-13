@@ -22,14 +22,19 @@ const Navbar = () => {
         <Box
           display={"flex"}
           flexDirection={"row"}
-          gap={4}
+          gap={8}
           alignItems={"center"}
         >
           <Box>
             <Image src={assets.logo} />
           </Box>
 
-          <HStack gap={4}>
+          <HStack
+            gap={4}
+            color={"gray.500"}
+            fontFamily={"Kumbh Sans"}
+            fontSize={"sm"}
+          >
             <Link href="">Collections</Link>
             <Link href="">Men</Link>
             <Link href="">Women</Link>
@@ -38,7 +43,7 @@ const Navbar = () => {
           </HStack>
         </Box>
 
-        <HStack>
+        <HStack gap={4}>
           <img src={assets.cartIcon} alt="" />
           <Avatar
             src={assets.imageAvatar}
