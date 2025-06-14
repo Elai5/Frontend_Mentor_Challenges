@@ -104,17 +104,20 @@ const MainContent = () => {
             Featuring a durable rubber outer sole, they'll withstand everything
             the weather can offer.
           </Text>
-          <HStack spacing={4} mb={2}>
-            <Text fontWeight={"bolder"} fontSize={{ base: "2l", md: "3xl" }}>
-              $125.00
+          <Stack direction={{ base: "row", md: "column" }}>
+            <HStack spacing={4} mb={2}>
+              <Text fontWeight={"bolder"} fontSize={{ base: "2l", md: "3xl" }}>
+                $125.00
+              </Text>
+              <Button bg={"black"} color={"white"}>
+                50%
+              </Button>
+            </HStack>
+            <Text textDecoration={"line-through"} as={"small"} px={1}>
+              $250.00
             </Text>
-            <Button bg={"black"} color={"white"}>
-              50%
-            </Button>
-          </HStack>
-          <Text textDecoration={"line-through"} as={"small"} px={1}>
-            $250.00
-          </Text>
+          </Stack>
+
           <Stack
             direction={{ base: "column", md: "row" }}
             spacing={4}
