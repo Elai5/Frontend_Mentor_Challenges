@@ -3,6 +3,10 @@ import imageAvatar from "./image-avatar.png";
 import logo from "./logo.svg";
 import cartIcon from "./icon-cart.svg";
 import menuIcon from "./icon-menu.svg";
+import minusIcon from "./icon-minus.svg";
+import plusIcon from "./icon-plus.svg";
+// import previousIconIcon from "./icon-menu.svg";
+// import nextIconIcon from "./icon-menu.svg";
 import imageProduct1 from "./image-product-1.jpg";
 import imageProduct2 from "./image-product-2.jpg";
 import imageProduct3 from "./image-product-3.jpg";
@@ -23,9 +27,10 @@ export const assets = {
   imageProduct4Thumbnail,
   imageProduct4,
   logo,
-  //   previousIcon,
-  //   nextIcon,
-  //   minusIcon,
+  // previousIcon,
+  // nextIcon,
+  minusIcon,
+  plusIcon,
   menuIcon,
   //   deleteIcon,
   //   closeIcon,

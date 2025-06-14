@@ -35,15 +35,13 @@ const Navbar = () => {
           justifyContent={"space-between"}
           maxW={"1200px"}
           mx={"auto"}
-          // "#68707d"
-          // #b6bcc8
-          // #f7f8fd"
-          py={{ base: "2", md: "10" }}
+          py={{ base: "2", md: "12" }}
         >
           <Box
             display={"flex"}
             flexDirection={"row"}
-            gap={8}
+            justifyContent={"space-between"}
+            gap={10}
             alignItems={"center"}
           >
             <Box display={"flex"} gap={1} alignItems={"center"}>
@@ -56,16 +54,17 @@ const Navbar = () => {
                   variant={"ghost"}
                 />
               </Box>
-              <Box>
+              <Box w={"100%"}>
                 <Image src={assets.logo} />
               </Box>
             </Box>
 
             <HStack
-              gap={4}
+              gap={5}
               color={"#68707d"}
               fontFamily={"Kumbh Sans"}
-              fontSize={"lg"}
+              fontSize={"2xl"}
+              // fontWeight={"semibold"}
               display={{ base: "none", md: "flex" }}
             >
               <Link href="">Collections</Link>
@@ -78,7 +77,6 @@ const Navbar = () => {
 
           <HStack gap={4}>
             <img src={assets.cartIcon} alt="" />
-
             <Avatar
               src={assets.imageAvatar}
               border={"1px"}
