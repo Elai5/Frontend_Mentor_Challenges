@@ -89,7 +89,7 @@ const MainContent = () => {
           <Heading
             as="h1"
             mb={{ base: "4", md: "7" }}
-            fontSize={{ base: "2xl", md: "5xl" }}
+            fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
           >
             Fall Limited Edition Sneakers
           </Heading>

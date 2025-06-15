@@ -31,11 +31,13 @@ const Navbar = () => {
     <Box>
       <Box borderBottom={"1px solid"} borderColor={"#b6bcc8"}>
         <Flex
-          bg={"white"}
+          // bg={"white"}
           justifyContent={"space-between"}
           maxW={"1200px"}
           mx={"auto"}
-          py={{ base: "2", md: "12" }}
+          py={{ base: "2", md: "4", lg: "6" }}
+          // bg={"green.500"}
+          px={{ base: "0", md: "2" }}
         >
           <Box
             display={"flex"}
@@ -54,6 +56,7 @@ const Navbar = () => {
                   variant={"ghost"}
                 />
               </Box>
+
               <Box w={"100%"}>
                 <Image src={assets.logo} />
               </Box>
@@ -63,7 +66,7 @@ const Navbar = () => {
               gap={5}
               color={"#68707d"}
               fontFamily={"Kumbh Sans"}
-              fontSize={"2xl"}
+              fontSize={{ base: "lg", lg: "2xl" }}
               // fontWeight={"semibold"}
               display={{ base: "none", md: "flex" }}
             >
