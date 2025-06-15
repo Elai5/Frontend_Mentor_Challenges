@@ -23,53 +23,68 @@ const MainContent = () => {
       alignItems={"center"}
       maxW={"100%"}
       fontFamily={"Kumbh Sans"}
-      py={{ base: 8, md: 32 }}
-      // bg={"red.500"}
+      py={{ base: "8", md: "16" }}
+      minH={"100vh"}
+      border="1px solid green"
     >
       <Box
         display={"flex"}
         flexDirection={{ base: "column", md: "row" }}
         justifyContent={"space-around"}
-        gap={8}
+        alignItems={"center"}
         maxW={"1200px"}
-        mx={"auto"}
         w={"100%"}
+        px={{ base: 4, md: 8 }}
+        border="1px solid red"
+        boxShadow={"md"}
       >
         <Box
           display={"flex"}
+          alignItems={"center"}
           flexDirection={"column"}
-          gap={7}
-          width={{ base: "100%", md: "50%" }}
+          gap={4}
+          width={{ base: "100%", md: "45%" }}
+          bg={"blue.500"}
         >
-          <Box width={"100%"}>
-            <Img src={assets.imageProduct1} borderRadius={"xl"}></Img>
+          <Box width={"100%"} display={"flex"} justifyContent={"center"}>
+            <Img src={assets.imageProduct1} borderRadius={"lg"} />
           </Box>
-          <HStack>
-            <Box>
+          <HStack justifyContent={"center"} spacing={4} width={"100%"}>
+            {[1, 2, 3, 4].map((num, ind) => (
+              <Box boxSize={"20%"} key={ind}>
+                <Image
+                  src={assets[`imageProduct${num}Thumbnail`]}
+                  borderRadius={"lg"}
+                />
+              </Box>
+            ))}
+          </HStack>
+          {/* <HStack>
+            <Box boxSize={"18%"}>
               <Image
                 src={assets.imageProduct1Thumbnail}
                 borderRadius={"lg"}
               ></Image>
             </Box>
-            <Box>
+            <Box boxSize={"18%"}>
               <Image
                 src={assets.imageProduct2Thumbnail}
                 borderRadius={"lg"}
               ></Image>
             </Box>
-            <Box>
+            <Box boxSize={"18%"}>
               <Image
                 src={assets.imageProduct3Thumbnail}
                 borderRadius={"lg"}
               ></Image>
             </Box>
-            <Box>
+            <Box boxSize={"18%"}>
               <Image
                 src={assets.imageProduct4Thumbnail}
                 borderRadius={"lg"}
               ></Image>
             </Box>
-          </HStack>
+          </HStack> */}
         </Box>
 
         <Box

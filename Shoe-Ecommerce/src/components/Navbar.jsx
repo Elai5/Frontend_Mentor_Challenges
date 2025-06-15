@@ -24,6 +24,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { assets } from "../assets/asset";
 import { NavLink } from "react-router-dom";
 import MainContent from "./MainContent";
+import Content from "./Content";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -66,7 +67,7 @@ const Navbar = () => {
               gap={5}
               color={"#68707d"}
               fontFamily={"Kumbh Sans"}
-              fontSize={{ base: "lg", lg: "2xl" }}
+              fontSize={{ base: "lg", md: "md" }}
               // fontWeight={"semibold"}
               display={{ base: "none", md: "flex" }}
             >
@@ -116,6 +117,7 @@ const Navbar = () => {
         </Drawer>
       </Box>
       <MainContent />
+      {/* <Content /> */}
     </Box>
   );
 };
