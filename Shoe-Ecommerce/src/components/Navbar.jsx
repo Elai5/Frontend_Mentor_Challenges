@@ -30,15 +30,18 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box>
-      <Box borderBottom={"1px solid"} borderColor={"#b6bcc8"}>
+      <Box>
         <Flex
+          borderBottom={"1px solid"}
+          borderColor={"#b6bcc8"}
           // bg={"white"}
-          justifyContent={"space-between"}
+          justifyContent={"space-around"}
           maxW={"1200px"}
+          w={"100%"}
           mx={"auto"}
           py={{ base: "2", md: "4", lg: "6" }}
           // bg={"green.500"}
-          px={{ base: "0", md: "2" }}
+          // px={{ base: "0", md: "2" }}
         >
           <Box
             display={"flex"}
@@ -67,8 +70,8 @@ const Navbar = () => {
               gap={5}
               color={"#68707d"}
               fontFamily={"Kumbh Sans"}
-              fontSize={{ base: "lg", md: "md" }}
-              // fontWeight={"semibold"}
+              fontSize={{ base: "lg", md: "sm" }}
+              fontWeight={500}
               display={{ base: "none", md: "flex" }}
             >
               <Link href="">Collections</Link>

@@ -124,7 +124,7 @@ const Content = () => {
               </HStack>
             </Button>
             <Button
-              rounded="lg"
+              rounded="md"
               w={{ base: "100%", md: "60%" }}
               bg="#ff7d1a"
               color="#fff"

@@ -18,14 +18,13 @@ import { assets } from "../assets/asset";
 const MainContent = () => {
   return (
     <Container
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
       maxW={"100%"}
       fontFamily={"Kumbh Sans"}
-      py={{ base: "8", md: "16" }}
+      py={{ base: "8", md: "16", lg: "16" }}
       minH={"100vh"}
+      // px={8}
       // border="1px solid green"
+      // bg={"red.500"}
     >
       <Box
         display={"flex"}
@@ -34,16 +33,15 @@ const MainContent = () => {
         alignItems={"center"}
         maxW={"1200px"}
         w={"100%"}
-        px={{ base: 4, md: 8 }}
-        // border="1px solid red"
-        boxShadow={"md"}
+        px={{ base: 4, md: 16 }}
+        // bg={"gray.600"}
       >
         <Box
           display={"flex"}
           alignItems={"center"}
           flexDirection={"column"}
           gap={4}
-          width={{ base: "100%", md: "45%" }}
+          width={{ base: "100%", md: "60%", lg: "40%" }}
           // bg={"blue.500"}
         >
           <Box width={"90%"} display={"flex"} justifyContent={"center"}>
@@ -51,15 +49,21 @@ const MainContent = () => {
           </Box>
           <HStack
             justifyContent={"center"}
-            spacing={6}
+            spacing={5}
             width={"100%"}
             // bg={"red.500"}
           >
             {[1, 2, 3, 4].map((num, ind) => (
-              <Box boxSize={"18%"} key={ind}>
+              <Box
+                boxSize={"18%"}
+                border={ind === 0 ? "2px solid orange" : "none"}
+                borderRadius={"lg"}
+                key={ind}
+              >
                 <Image
                   src={assets[`imageProduct${num}Thumbnail`]}
                   borderRadius={"lg"}
+                  opacity={ind === 0 ? 0.4 : 1}
                 />
               </Box>
             ))}
@@ -99,24 +103,25 @@ const MainContent = () => {
         >
           <Heading
             as={"h2"}
-            fontSize={{ base: "sm", md: "lg" }}
-            mb={5}
+            fontSize={{ base: "sm", md: "10px" }}
+            mb={2}
             color={"#68707d"}
-            fontWeight={"bolder"}
+            fontWeight={700}
           >
             SNEAKER COMPANY
           </Heading>
           <Heading
             as="h1"
-            mb={{ base: "4", md: "7" }}
-            fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
+            mb={{ base: "4", md: "5" }}
+            fontSize={{ base: "2xl", lg: "3xl" }}
+            fontWeight={"bold"}
           >
             Fall Limited Edition Sneakers
           </Heading>
           <Text
-            mb={5}
+            mb={3}
             color={"#68707d"}
-            fontSize={{ base: "sm", md: "md" }}
+            fontSize={{ base: "sm", md: "xs" }}
             // width={{ base: "100%", md: "50%" }}
             // fontWeight={"semibold"}
           >
@@ -126,7 +131,7 @@ const MainContent = () => {
           </Text>
           <Stack direction={{ base: "row", md: "column" }}>
             <HStack spacing={4}>
-              <Text fontWeight={"bolder"} fontSize={{ base: "xl", md: "2xl" }}>
+              <Text fontWeight={"bolder"} fontSize={{ base: "xl" }}>
                 $125.00
               </Text>
               <Button bg={"black"} color={"white"} size={"xs"}>
@@ -147,11 +152,21 @@ const MainContent = () => {
             direction={{ base: "column", md: "row" }}
             spacing={4}
             w={"100%"}
-            py={{ base: 4, lg: 8 }}
+            py={{ base: 4 }}
           >
             {" "}
-            <Button w={{ base: "100%", md: "40%" }}>
-              <HStack spacing={6}>
+            <Button
+              w={{ base: "100%", md: "70%" }}
+              fontSize={"xs"}
+              size={{ base: "sm", lg: "md" }}
+            >
+              <HStack
+                spacing={10}
+                fontSize={"xs"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+              >
                 <Box>
                   <Image src={assets.minusIcon}></Image>
                 </Box>
@@ -162,14 +177,15 @@ const MainContent = () => {
               </HStack>
             </Button>
             <Button
+              size={{ base: "sm", lg: "md" }}
               rounded="lg"
-              w={{ base: "100%", md: "60%" }}
+              w={{ base: "100%" }}
               bg={"#ff7d1a"}
               color={"#000000"}
               gap={4}
             >
               <MdOutlineShoppingCart />
-              Add to cart
+              <Text fontSize={"xs"}> Add to cart</Text>
             </Button>
           </Stack>
           {/* <HStack spacing={6}></HStack> */}
