@@ -1,5 +1,5 @@
 /** @format */
-
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -11,11 +11,32 @@ import {
   Text,
   VStack,
   Stack,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
 } from "@chakra-ui/react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { assets } from "../assets/asset";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+
 const Content = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const thumbnails = [1, 2, 3, 4];
+
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+    onOpen();
+  };
   return (
     <Container
       display="flex"
@@ -50,8 +71,13 @@ const Content = () => {
             <Img src={assets.imageProduct1} borderRadius="xl" width="70%" />
           </Box>
           <HStack justifyContent="center" spacing={4} width="100%">
-            {[1, 2, 3, 4].map((num, idx) => (
-              <Box boxSize="18%" key={idx}>
+            {thumbnails.map((num, idx) => (
+              <Box
+                boxSize="18%"
+                key={idx}
+                cursor={"pointer"}
+                onClick={() => handleImageClick(idx)}
+              >
                 <Image
                   src={assets[`imageProduct${num}Thumbnail`]}
                   borderRadius="lg"
@@ -129,6 +155,7 @@ const Content = () => {
               bg="#ff7d1a"
               color="#fff"
               gap={4}
+              onClick={onOpen}
             >
               <MdOutlineShoppingCart />
               Add to cart
@@ -136,6 +163,40 @@ const Content = () => {
           </Stack>
         </Box>
       </Box>
+      <Modal isOpen={isOpen} onClose={onClose} size={"xl"} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Product Image</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Swiper
+              initialSlide={currentImageIndex}
+              navigation={true}
+              modules={[Navigation]}
+              onSlideChange={(swiper) =>
+                setCurrentImageIndex(swiper.activeIndex)
+              }
+            >
+              {thumbnails.map((num, idx) => (
+                <SwiperSlide key={idx}>
+                  <Img
+                    src={assets[`imageProduct${num}`]}
+                    alt={`Product ${num}`}
+                    borderRadius="xl"
+                    width="100%"
+                    maxH="400px"
+                    objectFit="contain"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 };
