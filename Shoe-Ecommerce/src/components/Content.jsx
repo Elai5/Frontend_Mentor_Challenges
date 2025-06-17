@@ -19,7 +19,9 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { assets } from "../assets/asset";
 
@@ -37,6 +39,9 @@ const Content = () => {
     setCurrentImageIndex(index);
     onOpen();
   };
+
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <Container
       display="flex"
@@ -60,12 +65,19 @@ const Content = () => {
         boxShadow="md"
       >
         {/* LEFT IMAGE SECTION */}
-        <Box
+        {/* <Box
           display="flex"
           flexDirection="column"
           alignItems="center"
           gap={4}
           width={{ base: "100%", md: "45%" }}
+
+
+
+
+
+
+
         >
           <Box width="100%" display="flex" justifyContent="center">
             <Img src={assets.imageProduct1} borderRadius="xl" width="70%" />
@@ -85,6 +97,55 @@ const Content = () => {
               </Box>
             ))}
           </HStack>
+        </Box> */}
+        {/* LEFT IMAGE SECTION */}
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          gap={4}
+          width={{ base: "100%", md: "45%" }}
+        >
+          {isMobile ? (
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              style={{ width: "100%", borderRadius: "16px" }}
+            >
+              {thumbnails.map((num, idx) => (
+                <SwiperSlide key={idx}>
+                  <Img
+                    src={assets[`imageProduct${num}`]}
+                    borderRadius="xl"
+                    width="100%"
+                    maxH="400px"
+                    objectFit="contain"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <>
+              <Box width="100%" display="flex" justifyContent="center">
+                <Img src={assets.imageProduct1} borderRadius="xl" width="70%" />
+              </Box>
+              <HStack justifyContent="center" spacing={4} width="100%">
+                {thumbnails.map((num, idx) => (
+                  <Box
+                    boxSize="18%"
+                    key={idx}
+                    cursor="pointer"
+                    onClick={() => handleImageClick(idx)}
+                  >
+                    <Image
+                      src={assets[`imageProduct${num}Thumbnail`]}
+                      borderRadius="lg"
+                    />
+                  </Box>
+                ))}
+              </HStack>
+            </>
+          )}
         </Box>
 
         {/* RIGHT TEXT SECTION */}
