@@ -24,7 +24,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { assets } from "../assets/asset";
 import { NavLink } from "react-router-dom";
 import MainContent from "./MainContent";
-import Content from "./Content"; 
+// import Content from "./Content"; 
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -119,8 +119,8 @@ const Navbar = () => {
           </DrawerContent>
         </Drawer>
       </Box>
-      {/* <MainContent /> */}
-      <Content />
+      <MainContent />
+      {/* <Content /> */}
     </Box>
   );
 };

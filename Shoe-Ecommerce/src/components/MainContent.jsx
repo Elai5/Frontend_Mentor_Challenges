@@ -1,5 +1,5 @@
 /** @format */
-
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -9,13 +9,35 @@ import {
   Image,
   Img,
   Text,
-  VStack,
   Stack,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalCloseButton,
+  ModalBody,
+  useBreakpointValue,
+  ModalFooter,
 } from "@chakra-ui/react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { assets } from "../assets/asset";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+
 const MainContent = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const thumbnails = [1, 2, 3, 4];
+
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+    onOpen();
+  };
+
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <Container
       maxW={"100%"}
@@ -44,56 +66,47 @@ const MainContent = () => {
           width={{ base: "100%", md: "60%", lg: "40%" }}
           // bg={"blue.500"}
         >
-          <Box width={"90%"} display={"flex"} justifyContent={"center"}>
-            <Img src={assets.imageProduct1} borderRadius={"lg"} />
-          </Box>
-          <HStack
-            justifyContent={"center"}
-            spacing={5}
-            width={"100%"}
-            // bg={"red.500"}
-          >
-            {[1, 2, 3, 4].map((num, ind) => (
-              <Box
-                boxSize={"18%"}
-                border={ind === 0 ? "2px solid orange" : "none"}
-                borderRadius={"lg"}
-                key={ind}
-              >
-                <Image
-                  src={assets[`imageProduct${num}Thumbnail`]}
-                  borderRadius={"lg"}
-                  opacity={ind === 0 ? 0.4 : 1}
-                />
+          {isMobile ? (
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              style={{ width: "100%", borderRadius: "16px" }}
+            >
+              {thumbnails.map((num, idx) => (
+                <SwiperSlide key={idx}>
+                  <Img
+                    src={assets[`imageProduct${num}`]}
+                    borderRadius={"xl"}
+                    width={"100%"}
+                    maxH={"400px"}
+                    objectFit={"contain"}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <>
+              <Box width={"90%"} display={"flex"} justifyContent={"center"}>
+                <Img src={assets.imageProduct1} borderRadius={"lg"} />
               </Box>
-            ))}
-          </HStack>
-          {/* <HStack>
-            <Box boxSize={"18%"}>
-              <Image
-                src={assets.imageProduct1Thumbnail}
-                borderRadius={"lg"}
-              ></Image>
-            </Box>
-            <Box boxSize={"18%"}>
-              <Image
-                src={assets.imageProduct2Thumbnail}
-                borderRadius={"lg"}
-              ></Image>
-            </Box>
-            <Box boxSize={"18%"}>
-              <Image
-                src={assets.imageProduct3Thumbnail}
-                borderRadius={"lg"}
-              ></Image>
-            </Box>
-            <Box boxSize={"18%"}>
-              <Image
-                src={assets.imageProduct4Thumbnail}
-                borderRadius={"lg"}
-              ></Image>
-            </Box>
-          </HStack> */}
+              <HStack justifyContent={"center"} spacing={4} width={"100%"}>
+                {thumbnails.map((num, idx) => (
+                  <Box
+                    boxSize={"18%"}
+                    key={idx}
+                    cursor={"pointer"}
+                    onClick={() => handleImageClick(idx)}
+                  >
+                    <Image
+                      src={assets[`imageProduct${num}Thumbnail`]}
+                      alt="ShoeImage"
+                      borderRadius={"lg"}
+                    />
+                  </Box>
+                ))}
+              </HStack>
+            </>
+          )}
         </Box>
 
         <Box
@@ -188,9 +201,36 @@ const MainContent = () => {
               <Text fontSize={"xs"}> Add to cart</Text>
             </Button>
           </Stack>
-          {/* <HStack spacing={6}></HStack> */}
         </Box>
       </Box>
+      <Modal>
+        <ModalOverlay />
+        <ModalCloseButton />
+        <ModalBody>
+          <Swiper
+            initialSlide={currentImageIndex}
+            navigation={true}
+            modules={[Navigation]}
+            onSlideChange={(swiper) => setCurrentImageIndex(swiper.activeIndex)}
+          >
+            {thumbnails.map((num, idx) => (
+              <SwiperSlide key={idx}>
+                <Img
+                  src={assets[`imageProduct${num}`]}
+                  alt={`Product ${num}`}
+                  borderRadius={"xl"}
+                  width={"100%"}
+                  maxH={"400px"}
+                  objectFit={"contain"}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </ModalBody>
+        <ModalFooter>
+          <Button onClick={onClose}>Close</Button>
+        </ModalFooter>
+      </Modal>
     </Container>
   );
 };

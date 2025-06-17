@@ -1,0 +1,27 @@
+/** @format */
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  border-radius: 50%;
+  width: 25px !important;
+  height: 25px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  z-index: 10;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 8px !important;
+  color: black !important;
+  font-weight: 900 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  filter: brightness(0) saturate(100%);
+}
