@@ -174,16 +174,18 @@ const MainContent = () => {
               size={{ base: "sm", lg: "md" }}
             >
               <HStack
-                spacing={10}
+                // spacing={10}
                 fontSize={"xs"}
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={"space-between"}
+                width={"100%"}
+                // gap={14}
               >
                 <Box>
                   <Image src={assets.minusIcon}></Image>
                 </Box>
-                <Text>0</Text>
+                <Text>5</Text>
                 <Box>
                   <Image src={assets.plusIcon}></Image>
                 </Box>
