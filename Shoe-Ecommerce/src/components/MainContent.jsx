@@ -212,16 +212,20 @@ const MainContent = () => {
           className="flex py-8"
           bgColor={"transparent"}
           boxShadow={"none"}
+          mx={3}
+          bg={"red.500"}
         >
           <ModalCloseButton
             color={"orange.600"}
             cursor={"pointer"}
             fontWeight={"bolder"}
+            border={"none"}
+            outline={"none"}
+            _focus={{ boxShadow: "none" }}
           />
           <ModalBody>
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
-              // initialSlide={currentImageIndex}
               navigation={true}
               modules={[Navigation]}
               onSlideChange={(swiper) =>
@@ -231,18 +235,33 @@ const MainContent = () => {
             >
               {thumbnails.map((num, idx) => (
                 <SwiperSlide key={idx}>
-                  <Img
-                    src={assets[`imageProduct${num}`]}
-                    alt={`Product ${num}`}
+                  <Box
                     borderRadius={"xl"}
-                    width={"100%"}
-                    maxH={"350px"}
-                    objectFit={"contain"}
-                  />
+                    overflow={"hidden"}
+                    // bgColor={"whiteAlpha.600"}
+                    height="400px"
+                    width="100%"
+                    py={2}
+                    transition="all 0.3s ease-in-out"
+                  >
+                    <Img
+                      src={assets[`imageProduct${num}`]}
+                      alt={`Product ${num}`}
+                      sx={{ borderRadius: "1rem !important" }}
+                      width={"100%"}
+                      height={"100%"}
+                      objectFit={"contain"}
+                    />
+                  </Box>
                 </SwiperSlide>
               ))}
             </Swiper>{" "}
-            <HStack justifyContent={"center"} spacing={4} width={"100%"}>
+            <HStack
+              justifyContent={"center"}
+              spacing={4}
+              width={"100%"}
+              display={{ base: "none", md: "flex" }}
+            >
               {thumbnails.map((num, idx) => (
                 <Box
                   boxSize={"18%"}
