@@ -1,5 +1,5 @@
 /** @format */
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Box,
   Button,
@@ -17,6 +17,7 @@ import {
   ModalBody,
   useBreakpointValue,
   ModalFooter,
+  ModalContent,
 } from "@chakra-ui/react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { assets } from "../assets/asset";
@@ -30,13 +31,24 @@ const MainContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const thumbnails = [1, 2, 3, 4];
+  const [quatity, setQuantity] = useState(0);
+  const swiperRef = useRef(null);
 
   const handleImageClick = (index) => {
     setCurrentImageIndex(index);
+
+    if (isOpen && swiperRef.current) {
+      swiperRef.current.slideTo(index);
+    } else {
+    }
     onOpen();
   };
 
   const isMobile = useBreakpointValue({ base: true, md: false });
+
+  const handleIncrement = () => setQuantity((prev) => prev + 1);
+  const handleDecrement = () =>
+    setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
 
   return (
     <Container
@@ -64,7 +76,6 @@ const MainContent = () => {
           flexDirection={"column"}
           gap={4}
           width={{ base: "100%", md: "60%", lg: "40%" }}
-          // bg={"blue.500"}
         >
           {isMobile ? (
             <Swiper
@@ -131,20 +142,13 @@ const MainContent = () => {
           >
             Fall Limited Edition Sneakers
           </Heading>
-          <Text
-            mb={3}
-            color={"#68707d"}
-            fontSize={{ base: "sm", md: "xs" }}
-            // width={{ base: "100%", md: "50%" }}
-            // fontWeight={"semibold"}
-          >
+          <Text mb={3} color={"#68707d"} fontSize={{ base: "sm", md: "xs" }}>
             These low-profile sneakers are your perfect casual wear companion.
             Featuring a durable rubber outer sole, they'll withstand everything
             the weather can offer.
           </Text>
           <Stack
             direction={{ base: "row", md: "column" }}
-            align={"center"}
             justifyContent={"space-between"}
           >
             <HStack spacing={4}>
@@ -155,12 +159,7 @@ const MainContent = () => {
                 50%
               </Button>
             </HStack>
-            <Text
-              textDecoration={"line-through"}
-              as={"small"}
-              px={1}
-              // color="#b6bcc8"
-            >
+            <Text textDecoration={"line-through"} as={"small"} px={1}>
               $250.00
             </Text>
           </Stack>
@@ -184,11 +183,11 @@ const MainContent = () => {
                 justifyContent={"space-between"}
                 width={"100%"}
               >
-                <Box>
-                  <Image src={assets.minusIcon}></Image>
+                <Box onClick={handleDecrement} cursor="pointer">
+                  <Image src={assets.minusIcon} alt="Minus icon"></Image>
                 </Box>
-                <Text>0</Text>
-                <Box>
+                <Text>{quatity}</Text>
+                <Box onClick={handleIncrement} cursor="pointer">
                   <Image src={assets.plusIcon}></Image>
                 </Box>
               </HStack>
@@ -207,33 +206,60 @@ const MainContent = () => {
           </Stack>
         </Box>
       </Box>
-      <Modal>
-        <ModalOverlay />
-        <ModalCloseButton />
-        <ModalBody>
-          <Swiper
-            initialSlide={currentImageIndex}
-            navigation={true}
-            modules={[Navigation]}
-            onSlideChange={(swiper) => setCurrentImageIndex(swiper.activeIndex)}
-          >
-            {thumbnails.map((num, idx) => (
-              <SwiperSlide key={idx}>
-                <Img
-                  src={assets[`imageProduct${num}`]}
-                  alt={`Product ${num}`}
-                  borderRadius={"xl"}
-                  width={"100%"}
-                  maxH={"400px"}
-                  objectFit={"contain"}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </ModalBody>
-        <ModalFooter>
-          <Button onClick={onClose}>Close</Button>
-        </ModalFooter>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay bg="blackAlpha.700" />
+        <ModalContent
+          className="flex py-8"
+          bgColor={"transparent"}
+          boxShadow={"none"}
+        >
+          <ModalCloseButton
+            color={"orange.600"}
+            cursor={"pointer"}
+            fontWeight={"bolder"}
+          />
+          <ModalBody>
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              // initialSlide={currentImageIndex}
+              navigation={true}
+              modules={[Navigation]}
+              onSlideChange={(swiper) =>
+                setCurrentImageIndex(swiper.activeIndex)
+              }
+              className="mb-5"
+            >
+              {thumbnails.map((num, idx) => (
+                <SwiperSlide key={idx}>
+                  <Img
+                    src={assets[`imageProduct${num}`]}
+                    alt={`Product ${num}`}
+                    borderRadius={"xl"}
+                    width={"100%"}
+                    maxH={"350px"}
+                    objectFit={"contain"}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>{" "}
+            <HStack justifyContent={"center"} spacing={4} width={"100%"}>
+              {thumbnails.map((num, idx) => (
+                <Box
+                  boxSize={"18%"}
+                  key={idx}
+                  cursor={"pointer"}
+                  onClick={() => handleImageClick(idx)}
+                >
+                  <Image
+                    src={assets[`imageProduct${num}Thumbnail`]}
+                    alt="ShoeImage"
+                    borderRadius={"lg"}
+                  />
+                </Box>
+              ))}
+            </HStack>
+          </ModalBody>
+        </ModalContent>
       </Modal>
     </Container>
   );

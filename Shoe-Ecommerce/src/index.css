@@ -1,11 +1,12 @@
 /** @format */
+@import "tailwindcss";
 
 .swiper-button-prev,
 .swiper-button-next {
   background-color: white;
   border-radius: 50%;
-  width: 25px !important;
-  height: 25px !important;
+  width: 30px !important;
+  height: 30px !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
@@ -24,4 +25,12 @@
 .swiper-button-prev::after,
 .swiper-button-next::after {
   filter: brightness(0) saturate(100%);
+}
+
+.swiper-button-prev,
+.swiper-button-next:hover {
+  color: orangered !important;
+}
+.ModalCloseButton {
+  background-color: red !important;
 }
